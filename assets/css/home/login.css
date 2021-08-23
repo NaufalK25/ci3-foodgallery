@@ -1,0 +1,58 @@
+body {
+    /* background-image: url("../../img/food-background.jpg");
+    background-size: cover; */
+    background-color: #E8A598;
+}
+
+.login-kotak-luar {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.login-kotak {
+    border: 1px solid black !important;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #FEC5BB;
+}
+
+.login-input {
+    /* border-radius: 0 !important; */
+    border: 1px solid black !important;
+    background-color: #F8EDEB;
+}
+
+.login-input:focus {
+    background-color: #F8EDEB;
+}
+
+/* .login-button {
+    border-radius: 0 !important;
+} */
+
+.login-input:focus, .login-button-kotak:focus {
+    box-shadow: none !important;
+}
+
+.login-button {
+    border: 1px solid black;
+    color: #181616;
+    font-weight: 700;
+    background-color: #ffb5a7;
+}
+
+.login-button:hover {
+    border: 1px solid black;
+    color: #181616;
+    /* background-color: #fae1dd; */
+    background-color: #F8EDEB;
+}
+
+.login-link {
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}

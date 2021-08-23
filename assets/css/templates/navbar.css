@@ -1,0 +1,36 @@
+body {
+    font-family: 'Quicksand', sans-serif, "FontAwesome" !important;
+}
+
+.navbar-luar {
+    border-bottom: 1px solid #181616;
+}
+
+.navbar-merek {
+    font-weight: 700;
+    color: #181616 !important;
+}
+
+.navbar-hamburger {
+    border: 2px solid #181616 !important;
+    box-shadow: none !important;
+}
+
+.navbar-menu {
+    color: #181616 !important;
+}
+
+.navbar-menu:hover {
+    font-weight: 500;
+    text-decoration: underline;
+    color: #181616 !important;
+}
+
+.navbar-menu-aktif {
+    font-weight: 700;
+    color: #181616 !important;
+}
+
+.navbar-menu-aktif:hover {
+    font-weight: 700;
+}
