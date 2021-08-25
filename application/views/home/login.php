@@ -18,7 +18,7 @@
     <div class="login-kotak">
         <form action="post_data" method="POST">
             <div class="text-center mb-3">
-                <img src="<?= base_url(); ?>assets/img/fg.png" alt="logo" width="180">
+                <img src="<?= base_url(); ?>assets/img/fgi.png" alt="logo" width="180">
             </div>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control login-input" id="username" name="username" placeholder="Username" required autofocus>
