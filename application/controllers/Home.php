@@ -15,7 +15,7 @@
 
         public function login()
         {
-            $data['page_title'] = 'Food Gallery | Login';
+            $data['page_title'] = 'Login | Food Gallery';
             $this->load->view('templates/header', $data);
             $this->load->view('home/login', [
                 'url' => base_url() . 'home/login'
@@ -25,7 +25,7 @@
 
         public function register()
         {
-            $data['page_title'] = 'Food Gallery | Register';
+            $data['page_title'] = 'Register | Food Gallery';
             $this->load->view('templates/header', $data);
             $this->load->view('home/register', [
                 'url' => base_url() . 'home/register'

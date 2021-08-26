@@ -1,3 +1,51 @@
 body {
     background-color: #93ff96;
 }
+
+.register-kotak-luar {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.register-kotak {
+    border: 1px solid black !important;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #d0ffb7;
+}
+
+.register-input {
+    /* border-radius: 0 !important; */
+    border: 1px solid black !important;
+    background-color: #f2f5de;
+}
+
+.register-input:focus {
+    background-color: #f2f5de;
+}
+
+.register-input:focus, .register-button-kotak:focus {
+    box-shadow: none !important;
+}
+
+.register-button {
+    border: 1px solid black;
+    color: #181616;
+    font-weight: 700;
+    background-color: #f2f5de;
+}
+
+.register-button:hover {
+    border: 1px solid black;
+    color: #181616;
+    background-color: #93ff96;
+}
+
+.register-link {
+    text-decoration: none;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
