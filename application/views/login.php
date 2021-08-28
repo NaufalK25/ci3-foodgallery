@@ -2,9 +2,8 @@
     defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<link rel="stylesheet" href="<?= base_url(); ?>assets/css/home/login.css">
+<link rel="stylesheet" href="<?= base_url(); ?>assets/css/login.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/css/templates/navbar.css">
-<link rel="stylesheet" href="<?= base_url(); ?>assets/css/templates/footer.css">
 </head>
 <body>
     
@@ -14,11 +13,11 @@
     ]);
 ?>
 
-<div class="container login-kotak-luar">
+<div class="login-kotak-luar">
     <div class="login-kotak">
         <form action="post_data" method="POST">
             <div class="text-center mb-3">
-                <img src="<?= base_url(); ?>assets/img/fgi.png" alt="logo" width="180">
+                <img src="<?= base_url(); ?>assets/img/fg.png" alt="logo" width="180">
             </div>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control login-input" id="username" name="username" placeholder="Username" required autofocus>

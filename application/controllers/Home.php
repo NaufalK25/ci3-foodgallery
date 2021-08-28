@@ -4,33 +4,34 @@
     class Home extends CI_Controller {
         public function index()
         {
-            $data['page_title'] = 'Food Gallery';
+            $data['page_title'] = 'FoodGallery';
             $this->load->view('templates/header', $data);
-            $this->load->view('home/index', [
-                'url' => base_url() . 'home/index'
+            $this->load->view('home', [
+                'url' => base_url() . 'home'
             ]);
             $this->load->view('templates/footer');
+            $this->load->view('templates/scipt-footer');
             
-        }
-
-        public function login()
-        {
-            $data['page_title'] = 'Login | Food Gallery';
-            $this->load->view('templates/header', $data);
-            $this->load->view('home/login', [
-                'url' => base_url() . 'home/login'
-            ]);
-            $this->load->view('templates/footer');
         }
 
         public function register()
         {
-            $data['page_title'] = 'Register | Food Gallery';
+            $data['page_title'] = 'Register | FoodGallery';
             $this->load->view('templates/header', $data);
-            $this->load->view('home/register', [
+            $this->load->view('register', [
                 'url' => base_url() . 'home/register'
             ]);
-            $this->load->view('templates/footer');
+            $this->load->view('templates/scipt-footer');
+        }
+
+        public function login()
+        {
+            $data['page_title'] = 'Login | FoodGallery';
+            $this->load->view('templates/header', $data);
+            $this->load->view('login', [
+                'url' => base_url() . 'home/login'
+            ]);
+            $this->load->view('templates/scipt-footer');
         }
 
         public function post_data()

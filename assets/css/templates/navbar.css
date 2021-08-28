@@ -1,9 +1,11 @@
 body {
+    background-color: #93ff96;
     font-family: 'Quicksand', sans-serif, "FontAwesome" !important;
 }
 
 .navbar-luar {
-    border-bottom: 1px solid #181616;
+    background-color: #d0ffb7;
+    /* border-bottom: 1px solid #181616; */
 }
 
 .navbar-merek {

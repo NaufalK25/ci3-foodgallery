@@ -1,0 +1,64 @@
+.home-jumbotron {
+    background-image: url(../img/home-bg.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    /* opacity: .8; */
+}
+
+.home-jumbotron-isi {
+    text-align: center;
+    padding: 12.5%;
+}
+
+.home-jumbotron-tulisan {
+    font-size: 40pt;
+    color: black;
+    font-weight: 700;
+}
+
+.home-jumbotron-input {
+    border: 1px solid black !important;
+    background-color: #f2f5de;
+    width: 400px;
+    /* color: black !important; */
+}
+
+.home-jumbotron-input:focus {
+    background-color: #f2f5de;
+    box-shadow: none !important;
+}
+
+.home-jumbotron-button, .home-today-recipe-button {
+    border: 1px solid black;
+    color: #181616;
+    font-weight: 700;
+    background-color: #f2f5de;
+}
+
+.home-jumbotron-button:focus, .home-today-recipe-button:focus{
+    box-shadow: none !important;
+}
+
+.home-jumbotron-button:hover, .home-today-recipe-button:hover {
+    border: 1px solid black;
+    color: #181616;
+    background-color: #93ff96;
+}
+
+.home-today-recipe {
+    padding: 30px;
+}
+
+.home-today-recipe-tulisan {
+    padding: 150px;
+    text-align: center;
+    /* background-color: #d0ffb7;
+    border: 1px solid black;
+    border-radius: 50%; */
+}
+
+.home-today-recipe-card {
+    background-color: #d0ffb7;
+    border: 1px solid black;
+}

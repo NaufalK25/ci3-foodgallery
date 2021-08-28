@@ -2,7 +2,7 @@
     defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<div class="container navbar-luar">
+<div class="navbar-luar">
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand navbar-merek" href="<?= base_url(); ?>home/index">
@@ -14,14 +14,21 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link navbar-menu <?= $url == base_url() . 'home/index'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>home/index">Home</a>
+                        <a class="nav-link navbar-menu <?= $url == base_url() . 'home'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>home">Home</a>
                     </li>
+
+                    <!-- Belum Login -->
                     <li class="nav-item">
                         <a class="nav-link navbar-menu <?= $url == base_url() . 'home/register'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>home/register">Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link navbar-menu <?= $url == base_url() . 'home/login'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>home/login">Login</a>
                     </li>
+                    
+                    <!-- Sudah Login -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link navbar-menu <?= $url == base_url() . 'recipe'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>recipe">Recipe</a>
+                    </li> -->
                 </ul>
             </div>
         </div>
