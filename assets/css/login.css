@@ -38,9 +38,11 @@
 }
 
 .login-link {
+    color: #181616;
     text-decoration: none;
 }
 
 .login-link:hover {
+    color: #181616;
     text-decoration: underline;
 }

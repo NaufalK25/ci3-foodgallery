@@ -39,9 +39,12 @@
 }
 
 .register-link {
+    color: #181616;
+
     text-decoration: none;
 }
 
 .register-link:hover {
+    color: #181616;
     text-decoration: underline;
 }

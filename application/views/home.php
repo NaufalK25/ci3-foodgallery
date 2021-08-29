@@ -1,5 +1,8 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
+
+    // var_dump($today_recipe);
+    // var_dump($recipe_detail);
 ?>
 
 <link rel="stylesheet" href="<?= base_url(); ?>assets/css/home.css">
@@ -24,37 +27,53 @@
             <input class="form-control me-2 home-jumbotron-input" type="search" placeholder="Search" aria-label="Search" autofocus>
             <button type="submit" class="btn home-jumbotron-button"><i class="fas fa-search"></i> Search</button>    
         </form>
-        <a href="<?= base_url() ?>/recipe">
-            <button class="btn home-jumbotron-button"><i class="fas fa-list-ul"></i> Daftar Resep</button>
+        <a href="<?= base_url() ?>/recipe" class="btn home-jumbotron-button">
+            <i class="fas fa-list-ul"></i> Daftar Resep
         </a>
     </div>
 </div>
 <!-- End of Jumbotron -->
 
 <!-- Start of Today Recipe -->
-<div class="home-today-recipe">
+<div class="home-today">
     <div class="row">
         <div class="col">
-            <div class="home-today-recipe-tulisan">
-                <h1 class="fs-2">Resep Hari Ini -></h1>
-                <p class="fs-5">Judul Resep</p>
-                <p class="fs-5">
-                    Penjelasan Resep
-                </p>
-            </div>
+            <!-- <div> -->
+            <h1 class="fs-4">Resep Hari Ini</h1>
+            <hr>
+            <p class="fs-4 fw-bold"><?= $today_recipe->new_title; ?></p>
+            <p>
+                Waktu: <?= $today_recipe->times; ?> | 
+                Porsi: <?= $today_recipe->portion; ?> | 
+                Kesulitan: <?= $today_recipe->dificulty; ?>
+            </p>
+            <p class="text-right"><?= $recipe_detail->desc; ?></p>
+            <a href="<?= base_url(); ?>recipe/detail?key=<?= $today_recipe->key; ?>" class="home-today-link">
+                Lihat Detail Resep dan Cara Memasak Disini
+            </a>
+            <!-- </div> -->
         </div>
         <div class="col">
-            <div class="card home-today-recipe-card">
-                <img src="<?= base_url(); ?>assets/img/home-bg.jpg" class="card-img-top" alt="...">
+            <div class="card home-today-card">
+                <img src="<?= $today_recipe->thumb ?>" class="card-img-top" alt="<?= $today_recipe->new_title; ?>">
                 <div class="card-body">
-                    <div class="text-center">
-                        <h5 class="card-title">Nama Resep</h5>
-                        <p>Waktu Resep</p>
-                        <p>Porsi Resep</p>
-                        <p>Kesulitan Resep</p>
+                    <div class=row>
+                        <div class="col">
+                            <h5 class="card-title fw-bold"><?= $today_recipe->new_title; ?></h5>
+                            <p>0 Disukai</p>
+                            <p>0 Ditandai</p>
+                            <p>0 Dikirim</p>
+                        </div>
+                        <div class="col home-today-card-icon">
+                            <button type="submit"><i class="fal fa-heart"></i></button>
+                            <button type="submit"><i class="fal fa-bookmark"></i></button>
+                            <button type="submit"><i class="fal fa-paper-plane"></i></button>
+                        </div>
                     </div>
                     <div class="text-center">
-                        <a href="#" class="btn home-today-recipe-button">Cara Masak</a>
+                        <a href="<?= base_url(); ?>recipe/detail?key=<?= $today_recipe->key; ?>" class="btn home-jumbotron-button">
+                            <i class="fas fa-utensils"></i> Cara Masak
+                        </a>
                     </div>
                 </div>
             </div>

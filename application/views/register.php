@@ -34,7 +34,8 @@
             <div class="text-center mb-3">
                 <button type="submit" class="btn register-button-kotak register-button">Register</button>
             </div>
-            <p>Already have an account? <a href="<?= base_url(); ?>home/login" class="register-link">Login Here</a></p>
+            <!-- <p>Already have an account? <a href="<?= base_url(); ?>home/login" class="register-link">Login Here</a></p> -->
+            <p>Sudah Punya Akun? <a href="<?= base_url(); ?>home/login" class="register-link">Login Disini</a></p>
         </form>
     </div>
 </div>

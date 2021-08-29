@@ -29,36 +29,48 @@
     box-shadow: none !important;
 }
 
-.home-jumbotron-button, .home-today-recipe-button {
+.home-jumbotron-button, .home-today-button {
     border: 1px solid black;
     color: #181616;
     font-weight: 700;
     background-color: #f2f5de;
 }
 
-.home-jumbotron-button:focus, .home-today-recipe-button:focus{
+.home-jumbotron-button:focus, .home-today-button:focus{
     box-shadow: none !important;
 }
 
-.home-jumbotron-button:hover, .home-today-recipe-button:hover {
+.home-jumbotron-button:hover, .home-today-button:hover {
     border: 1px solid black;
     color: #181616;
     background-color: #93ff96;
 }
 
-.home-today-recipe {
+.home-today {
     padding: 30px;
 }
 
-.home-today-recipe-tulisan {
-    padding: 150px;
-    text-align: center;
-    /* background-color: #d0ffb7;
-    border: 1px solid black;
-    border-radius: 50%; */
+.home-today-link {
+    color: #181616;
+    text-decoration: none;
 }
 
-.home-today-recipe-card {
+.home-today-link:hover {
+    color: #181616;
+    text-decoration: underline;
+}
+
+.home-today-card {
     background-color: #d0ffb7;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+}
+
+.home-today-card-icon {
+    font-size: 18pt;
+    text-align: right;
+}
+
+.home-today-card-icon > button {
+    background: none;
+    border: none;
 }
