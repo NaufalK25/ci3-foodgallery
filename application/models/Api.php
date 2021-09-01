@@ -5,7 +5,7 @@
         public function connect_api($url)
         {
             $json_data = @file_get_contents($url);
-                
+
             if(!$json_data)
             {
                 return false;
