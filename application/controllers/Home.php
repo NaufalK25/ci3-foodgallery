@@ -38,6 +38,35 @@
                 'url' => base_url() . 'home/login'
             ]);
             $this->load->view('templates/script-footer');
+
+        }
+
+        public function post_data()
+        {
+            $username = $this->input->post('username');
+		    $password = $this->input->post('password');
+
+		    $this->load->model('User');
+
+		    $result = $this->User->get_user_info($username);
+
+		    if(count($result) > 0)
+		    {
+		    	$password = md5($password);
+            
+		    	if($password == $result[0]['password'])
+		    	{
+		    		echo 'Login Berhasil!';
+		    	}
+		    	else
+		    	{
+		    		echo 'Login Gagal!';
+		    	}
+		    }
+		    else
+		    {
+		    	echo 'Username tidak terdaftar!';
+		    }
         }
     }
 ?>

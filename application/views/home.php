@@ -48,7 +48,7 @@
                 Kesulitan: <?= $today_recipe->dificulty; ?>
             </p>
             <p class="text-right"><?= $recipe_detail->desc; ?></p>
-            <a href="<?= base_url(); ?>recipe/detail?key=<?= $today_recipe->key; ?>" class="home-today-link">
+            <a href="<?= base_url(); ?>recipe/detail/<?= $today_recipe->key; ?>" class="home-today-link">
                 Lihat Detail Resep dan Cara Memasak Disini
             </a>
             <!-- </div> -->
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <a href="<?= base_url(); ?>recipe/detail?key=<?= $today_recipe->key; ?>" class="btn home-jumbotron-button">
+                        <a href="<?= base_url(); ?>recipe/detail/<?= $today_recipe->key; ?>" class="btn home-jumbotron-button">
                             <i class="fas fa-utensils"></i> Cara Masak
                         </a>
                     </div>

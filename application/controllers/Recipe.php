@@ -15,19 +15,33 @@
 
         public function detail()
         {
-            $key = $this->input->get('key');
+            $key = $this->uri->segment(3, 0);
 
-            $this->load->model('Api');
+            $this->load->model('Api'); 
             $recipe_detail = $this->Api->get_recipe_detail($key);
 
-            $data['page_title'] = 'Resep ' . $recipe_detail->new_title;
-            $this->load->view('templates/header', $data);
-            $this->load->view('detail', [
-                'url' => '',
-                'recipe_detail' => $recipe_detail
-            ]);
-            $this->load->view('templates/footer');
-            $this->load->view('templates/script-footer');
+            if(
+                empty($recipe_detail->needItem) && 
+                empty($recipe_detail->ingredient) &&
+                empty($recipe_detail->step) &&
+                $recipe_detail->new_title == 0
+            )
+            {
+                $data['page_title'] = 'Error';  
+                $this->load->view('templates/header', $data);
+                $this->load->view('error_404');
+            }
+            else
+            {
+                $data['page_title'] = 'Resep ' . $recipe_detail->new_title;
+                $this->load->view('templates/header', $data);
+                $this->load->view('detail', [
+                    'url' => '',
+                    'recipe_detail' => $recipe_detail
+                ]);
+                $this->load->view('templates/footer');
+                $this->load->view('templates/script-footer');
+            }
         }
     }
 ?>

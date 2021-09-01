@@ -15,7 +15,7 @@
 
 <div class="login-kotak-luar">
     <div class="login-kotak">
-        <form action="" method="POST">
+        <form action="post_data" method="POST">
             <div class="text-center mb-3">
                 <img src="<?= base_url(); ?>assets/img/fg.png" alt="logo" width="180">
             </div>
