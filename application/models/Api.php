@@ -13,7 +13,6 @@
 
             $response_data = json_decode($json_data);
             return $response_data->results;  
-
         }
 
         public function get_recipe_name($recipe_key)

@@ -16,8 +16,7 @@
                 'recipe_detail' => $recipe_detail
             ]);
             $this->load->view('templates/footer');
-            $this->load->view('templates/script-footer');
-            
+            $this->load->view('templates/script-footer');   
         }
 
         public function register()
@@ -38,7 +37,6 @@
                 'url' => base_url() . 'home/login'
             ]);
             $this->load->view('templates/script-footer');
-
         }
 
         public function post_data()
