@@ -3,12 +3,17 @@
     
     class Api extends CI_Model {
         public function connect_api($url)
-        {   
-            $json_data = file_get_contents($url);
-            
-            $response_data = json_decode($json_data);
+        {
+            $json_data = @file_get_contents($url);
+                
+            if(!$json_data)
+            {
+                return false;
+            }
 
-            return $response_data->results;
+            $response_data = json_decode($json_data);
+            return $response_data->results;  
+
         }
 
         public function get_recipe_name($recipe_key)
@@ -50,6 +55,11 @@
 
             $recipe_detail = $this->connect_api($url);
 
+            if(!$recipe_detail)
+            {
+                return false;
+            }
+
             $recipe_detail->new_title = $this->get_recipe_name($recipe_key);
 
             if(!(
@@ -64,7 +74,6 @@
                     $recipe_detail->thumb = base_url() . 'assets/img/image-not-found.png';
                 }
             }
-
             return $recipe_detail;
         }
     }
