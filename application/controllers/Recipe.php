@@ -20,11 +20,13 @@
             $this->load->model('Api'); 
             $recipe_detail = $this->Api->get_recipe_detail($key);
 
+
             if(
-                empty($recipe_detail->needItem) && 
+                !$recipe_detail ||
+                (empty($recipe_detail->needItem) && 
                 empty($recipe_detail->ingredient) &&
                 empty($recipe_detail->step) &&
-                $recipe_detail->new_title == 0
+                $recipe_detail->new_title == 0)
             )
             {
                 $data['page_title'] = 'Error';  
