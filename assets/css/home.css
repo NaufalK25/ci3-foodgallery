@@ -17,6 +17,21 @@
     font-weight: 700;
 }
 
+.home-jumbotron-alert {
+    font-weight: 700;
+    font-size: 15pt;
+}
+
+.home-jumbotron-link, .home-today-link {
+    color: #181616;
+    text-decoration: none;
+}
+
+.home-jumbotron-link:hover, .home-today-link:hover {
+    color: #181616;
+    text-decoration: underline;
+}
+
 .home-jumbotron-input {
     border: 1px solid black !important;
     background-color: #f2f5de;
@@ -36,7 +51,7 @@
     background-color: #f2f5de;
 }
 
-.home-jumbotron-button:focus, .home-today-button:focus{
+.home-jumbotron-button:focus, .home-today-button:focus {
     box-shadow: none !important;
 }
 
@@ -55,27 +70,7 @@
     height: 375px;
 }
 
-.home-today-link {
-    color: #181616;
-    text-decoration: none;
-}
-
-.home-today-link:hover {
-    color: #181616;
-    text-decoration: underline;
-}
-
 .home-today-card {
     background-color: #d0ffb7;
     /* border: 1px solid black; */
-}
-
-.home-today-card-icon {
-    text-align: right;
-    font-size: 18pt;
-}
-
-.home-today-card-icon > button {
-    background: none;
-    border: none;
 }

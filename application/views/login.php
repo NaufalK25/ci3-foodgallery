@@ -13,22 +13,25 @@
 
 <div class="login-kotak-luar">
     <div class="login-kotak">
-        <form action="post_data" method="POST">
+        <form action="login" method="POST">
             <div class="text-center mb-3">
                 <img src="<?= base_url(); ?>assets/img/fg.png" alt="logo" width="180">
             </div>
+            <?= $this->session->flashdata('message'); ?>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control login-input" id="username" name="username" placeholder="Username" required autofocus>
+                <input type="text" class="form-control login-input" id="username" name="username" placeholder="Username" value="<?= set_value('username') ?>" autofocus>
                 <label for="username"><i class="fas fa-user"></i> Username</label>
+                <?= form_error('username', '<small class="login-error">', '</small>') ?>
             </div>
             <div class="form-floating mb-3">
-                <input type="password" class="form-control login-input" id="password" name="password" placeholder="Password" required autocomplete="off">
+                <input type="password" class="form-control login-input" id="password" name="password" placeholder="Password" autocomplete="off">
                 <label for="password"><i class="fas fa-key"></i> Password</label>
+                <?= form_error('password', '<small class="login-error">', '</small>') ?>
             </div>
-            <div class="form-check mb-3">
+            <!-- <div class="form-check mb-3">
                 <input type="checkbox" class="form-check-input login-button-kotak" id="remember-me" checked>
                 <label class="form-check-label" for="remember-me">Remember Me</label>
-            </div>
+            </div> -->
             <div class="text-center mb-3">
                 <button type="submit" class="btn login-button-kotak login-button">Login</button>
             </div>

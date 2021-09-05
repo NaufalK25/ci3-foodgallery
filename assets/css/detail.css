@@ -17,28 +17,35 @@
     border: 1px solid black;
 } */
 
-.detail-kotak-kiri {
+/* .detail-kotak-kiri {
     border-right: 1px solid black;
-}
+} */
 
 .detail-kotak-kiri-bawah {
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
     margin-top: 10px;
 }
 
-.detail-icon {
-    text-align: right;
-    font-size: 18pt;
+.detail-button {
+    border: 1px solid black;
+    color: #181616;
+    font-weight: 700;
+    background-color: #f2f5de;
 }
 
-.detail-icon > button {
-    background: none;
-    border: none;
+.detail-button:focus {
+    box-shadow: none !important;
 }
 
-.detail-kotak-kanan {
+.detail-button:hover {
+    border: 1px solid black;
+    color: #181616;
+    background-color: #93ff96;
+}
+
+/* .detail-kotak-kanan {
     border-bottom: 1px solid black;
-}
+} */
 
 .detail-desc {
     overflow: auto;

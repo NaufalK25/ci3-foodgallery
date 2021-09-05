@@ -16,22 +16,26 @@
                     <li class="nav-item">
                         <a class="nav-link navbar-menu <?= $url == base_url() . 'home'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>home">Home</a>
                     </li>
-
-                    <!-- Belum Login -->
-                    <li class="nav-item">
-                        <a class="nav-link navbar-menu <?= $url == base_url() . 'register'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>register">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navbar-menu <?= $url == base_url() . 'login'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>login">Login</a>
-                    </li>
-                    
-                    <!-- Sudah Login -->
-                    <!-- <li class="nav-item">
-                        <a class="nav-link navbar-menu <?= $url == base_url() . 'recipe'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>recipe">Recipe List</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navbar-menu" href="<?= base_url(); ?>">Your Recipe</a>
-                    </li> -->
+                    <?php if(!$this->session->username): ?>
+                        <!-- Belum Login -->
+                        <li class="nav-item">
+                            <a class="nav-link navbar-menu <?= $url == base_url() . 'register'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>register">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navbar-menu <?= $url == base_url() . 'login'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>login">Login</a>
+                        </li>
+                    <?php else: ?>
+                        <!-- Sudah Login -->
+                        <li class="nav-item">
+                            <a class="nav-link navbar-menu <?= $url == base_url() . 'recipe'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>recipe">Daftar Resep</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navbar-menu <?= $url == base_url() . 'account'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>account">Akun</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navbar-menu" href="<?= base_url(); ?>logout">Keluar</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>

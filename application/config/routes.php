@@ -54,9 +54,10 @@ $route['404_override'] = 'error_controller/error_404';
 $route['translate_uri_dashes'] = FALSE;
 
 // home
-$route['login'] = 'home/login';
 $route['register'] = 'home/register';
-$route['post_data']['POST'] = 'home/post_data';
+$route['login'] = 'home/login';
+$route['logout'] = 'home/logout';
+$route['account'] = 'home/account';
 
 // recipe
 $route['recipe'] = 'recipe';

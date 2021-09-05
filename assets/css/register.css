@@ -5,7 +5,8 @@
 }
 
 .register-kotak {
-    border: 1px solid black !important;
+    width: 500px;
+    /* border: 1px solid black !important; */
     padding: 20px;
     border-radius: 5px;
     background-color: #d0ffb7;
@@ -23,6 +24,12 @@
 
 .register-input:focus, .register-button-kotak:focus {
     box-shadow: none !important;
+}
+
+.register-error {
+    color: red;
+    font-weight: 700;
+    font-size: 8pt;
 }
 
 .register-button {

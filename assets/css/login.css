@@ -5,10 +5,15 @@
 }
 
 .login-kotak {
-    border: 1px solid black !important;
+    width: 500px;
+    /* border: 1px solid black !important; */
     padding: 20px;
     border-radius: 5px;
     background-color: #d0ffb7;
+}
+
+.login-alert {
+    font-size: 10pt;
 }
 
 .login-input {
@@ -20,8 +25,14 @@
     background-color: #f2f5de;
 }
 
-.login-input:focus, .login-button-kotak:focus {
+.login-input:focus, .login-button-kotak:focus, .alert > button:focus {
     box-shadow: none !important;
+}
+
+.login-error {
+    color: red;
+    font-weight: 700;
+    font-size: 8pt;
 }
 
 .login-button {

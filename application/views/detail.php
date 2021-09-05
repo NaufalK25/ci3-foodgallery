@@ -22,15 +22,18 @@
                 </div>
                 <div class="row detail-kotak-kiri-bawah">
                     <div class="col">
-                        <p>0 Disukai</p>
                         <p>0 Disimpan</p>
-                        <p>0 Dibagikan</p>
+                        <p>0 Dibuat</p>
+                        <p>0 Dikuasai</p>
                     </div>
-                    <div class="col detail-icon">
-                        <input type="range" id="rating" name="rating" min="0" max="5">
-                        <button type="submit"><i class="fal fa-heart"></i></button>
-                        <button type="submit"><i class="fal fa-bookmark"></i></button>
-                        <button type="submit"><i class="fal fa-paper-plane"></i></button>
+                    <div class="col">
+                        <div class="col text-end">
+                            <button type="submit" class="btn mb-1 detail-button">Simpan</button>
+                            <br>
+                            <button type="submit" class="btn mb-1 detail-button">Pernah Membuat</button>
+                            <br>
+                            <button type="submit" class="btn mb-1 detail-button">Telah Menguasai</button>
+                        </div> 
                     </div>
                 </div>
                 <div class="row detail-kotak-kiri-bawah">
@@ -49,6 +52,7 @@
             <div class="col">
                 <div class="detail-bahan">
                     <p class="detail-mini-judul">Bahan-Bahan Yang Dibutuhkan</p>
+                    <hr>
                     <p class="detail-note">*Checklist bahan jika sudah ada</p>
                     <?php foreach($recipe_detail->ingredient as $ingredient): ?>
                         <p>
@@ -63,6 +67,7 @@
             <div class="col">
                 <div class="detail-cara" id="detail-cara">
                     <p class="detail-mini-judul">Cara Memasak</p>
+                    <hr>
                     <p class="detail-note">*Checklist cara memasak yang sudah dilakukan</p>
                     <?php foreach($recipe_detail->step as $step): ?>
                         <p>
