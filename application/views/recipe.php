@@ -9,7 +9,5 @@
 <body>
 
 <?php
-    $this->load->view('templates/navbar', [
-        'url' => 'recipe'
-    ]);
+    $this->load->view('templates/navbar');
 ?>

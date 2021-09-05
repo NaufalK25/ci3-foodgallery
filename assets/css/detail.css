@@ -1,0 +1,63 @@
+.detail-kotak-luar {
+    /* border: 1px solid black; */
+    padding: 50px;
+}
+
+.detail-judul {
+    font-weight: 700;
+    font-size: 20pt;
+}
+
+.detail-kotak-dalam {
+    /* border: 1px solid black; */
+    padding: 15px;
+    background-color: #d0ffb7;
+}
+/* .col {
+    border: 1px solid black;
+} */
+
+.detail-kotak-kiri {
+    border-right: 1px solid black;
+}
+
+.detail-kotak-kiri-bawah {
+    border-bottom: 1px solid black;
+    margin-top: 10px;
+}
+
+.detail-icon {
+    text-align: right;
+    font-size: 18pt;
+}
+
+.detail-icon > button {
+    background: none;
+    border: none;
+}
+
+.detail-kotak-kanan {
+    border-bottom: 1px solid black;
+}
+
+.detail-desc {
+    overflow: auto;
+    height: 410px;
+}
+
+.detail-bahan, .detail-cara {
+    margin-top: 10px;
+}
+
+.detail-mini-judul {
+    font-weight: 600;
+    font-size: 15pt;
+}
+
+.detail-note {
+    font-size: 10pt;
+}
+
+.detail-checkbox:focus {
+    box-shadow: none !important;
+}
