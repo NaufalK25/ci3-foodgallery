@@ -1,0 +1,22 @@
+.error-kotak {
+    background-color: #d0ffb7;
+    border-radius: 50%;
+    width: fit-content;
+    margin: 150px 0 75px 0;
+}
+
+.error-tulisan {
+    position: absolute;
+    top: 100px;
+    left: 450px;
+}
+
+.error-link {
+    color: #181616;
+    text-decoration: none;
+}
+
+.error-link:hover {
+    color: #181616;
+    text-decoration: underline;
+}

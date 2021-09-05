@@ -12,9 +12,7 @@
 <body>
 
 <?php
-    $this->load->view('templates/navbar', [
-        'url' => $url
-    ]);
+    $this->load->view('templates/navbar');
 ?>
 
 <!-- Start of Jumbotron -->
@@ -27,7 +25,7 @@
             <input class="form-control me-2 home-jumbotron-input" type="search" placeholder="Search" aria-label="Search" autofocus>
             <button type="submit" class="btn home-jumbotron-button"><i class="fas fa-search"></i> Search</button>    
         </form>
-        <a href="<?= base_url() ?>/recipe" class="btn home-jumbotron-button">
+        <a href="<?= base_url(); ?>recipe" class="btn home-jumbotron-button">
             <i class="fas fa-list-ul"></i> Daftar Resep
         </a>
     </div>
@@ -43,12 +41,12 @@
             <hr>
             <p class="fs-4 fw-bold"><?= $today_recipe->new_title; ?></p>
             <p>
-                Waktu: <?= $today_recipe->times; ?> | 
-                Porsi: <?= $today_recipe->portion; ?> | 
+                Waktu: <?= $today_recipe->times; ?> |
+                Porsi: <?= $today_recipe->portion; ?> |
                 Kesulitan: <?= $today_recipe->dificulty; ?>
             </p>
-            <p class="text-right"><?= $recipe_detail->desc; ?></p>
-            <a href="<?= base_url(); ?>recipe/detail/<?= $today_recipe->key; ?>" class="home-today-link">
+            <p class="home-today-desc"><?= $recipe_detail->desc; ?></p>
+            <a href="<?= base_url(); ?>recipe/detail/<?= $today_recipe->key; ?>#detail-cara" class="home-today-link">
                 Lihat Detail Resep dan Cara Memasak Disini
             </a>
             <!-- </div> -->
@@ -61,17 +59,20 @@
                         <div class="col">
                             <h5 class="card-title fw-bold"><?= $today_recipe->new_title; ?></h5>
                             <p>0 Disukai</p>
-                            <p>0 Ditandai</p>
-                            <p>0 Dikirim</p>
+                            <p>0 Disimpan</p>
+                            <p>0 Dibagikan</p>
                         </div>
-                        <div class="col home-today-card-icon">
-                            <button type="submit"><i class="fal fa-heart"></i></button>
-                            <button type="submit"><i class="fal fa-bookmark"></i></button>
-                            <button type="submit"><i class="fal fa-paper-plane"></i></button>
+                        <div class="col">
+                            <div class="col home-today-card-icon">
+                                <input type="range" id="rating" name="rating" min="0" max="5">
+                                <button type="submit"><i class="fal fa-heart"></i></button>
+                                <button type="submit"><i class="fal fa-bookmark"></i></button>
+                                <button type="submit"><i class="fal fa-paper-plane"></i></button>
+                            </div>
                         </div>
                     </div>
                     <div class="text-center">
-                        <a href="<?= base_url(); ?>recipe/detail/<?= $today_recipe->key; ?>" class="btn home-jumbotron-button">
+                        <a href="<?= base_url(); ?>recipe/detail/<?= $today_recipe->key; ?>#detail-cara" class="btn home-jumbotron-button">
                             <i class="fas fa-utensils"></i> Cara Masak
                         </a>
                     </div>

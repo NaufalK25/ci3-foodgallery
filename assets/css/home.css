@@ -50,6 +50,11 @@
     padding: 30px;
 }
 
+.home-today-desc {
+    overflow: auto;
+    height: 375px;
+}
+
 .home-today-link {
     color: #181616;
     text-decoration: none;
@@ -66,8 +71,8 @@
 }
 
 .home-today-card-icon {
-    font-size: 18pt;
     text-align: right;
+    font-size: 18pt;
 }
 
 .home-today-card-icon > button {

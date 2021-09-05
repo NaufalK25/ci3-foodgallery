@@ -40,12 +40,16 @@
             
             $recipe = $this->connect_api($url);
             
-            // shuffle $recipe
             $random_number = rand(0, count($recipe) - 1);
             
             $recipe[$random_number]->new_title = $this->get_recipe_name($recipe[$random_number]->key);
 
             return $recipe[$random_number];
+
+            // $idx = 0;
+            // $recipe[$idx]->new_title = $this->get_recipe_name($recipe[$idx]->key);
+
+            // return $recipe[$idx];
         }
 
         public function get_recipe_detail($recipe_key)
@@ -76,5 +80,4 @@
             return $recipe_detail;
         }
     }
-
 ?>

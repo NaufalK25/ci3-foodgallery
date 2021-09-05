@@ -8,9 +8,7 @@
 <body>
     
 <?php
-    $this->load->view('templates/navbar', [
-        'url' => $url
-    ]);
+    $this->load->view('templates/navbar');
 ?>
 
 <div class="login-kotak-luar">
@@ -35,7 +33,7 @@
                 <button type="submit" class="btn login-button-kotak login-button">Login</button>
             </div>
             <!-- <p>Don't have an account? <a href="<?= base_url(); ?>home/register" class="login-link">Register Here</a></p> -->
-            <p>Belum Punya Akun? <a href="<?= base_url(); ?>home/register" class="login-link">Regis Disini</a></p>
+            <p>Belum Punya Akun? <a href="<?= base_url(); ?>register" class="login-link">Regis Disini</a></p>
         </form>
     </div>
 </div>
