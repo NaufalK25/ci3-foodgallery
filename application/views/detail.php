@@ -31,8 +31,8 @@
                 </thead>
                 <tbody>
                     <tr class="text-center">
-                        <td>0</td>
-                        <td>Disimpan</td>
+                        <td class="align-middle">0</td>
+                        <td class="align-middle">Disimpan</td>
                         <td>
                             <form action="" method="POST">
                                 <button type="submit" class="btn btn-outline-dark detail-table-button">Simpan</button>
@@ -40,8 +40,8 @@
                         </td>
                     </tr>
                     <tr class="text-center">
-                        <td>0</td>
-                        <td>Dibuat</td>
+                        <td class="align-middle">0</td>
+                        <td class="align-middle">Dibuat</td>
                         <td>
                             <form action="" method="POST">
                                 <button type="submit" class="btn btn-outline-dark detail-table-button">Pernah Membuat</button>
@@ -49,8 +49,8 @@
                         </td>
                     </tr>
                     <tr class="text-center">
-                        <td>0</td>
-                        <td>Dikuasai</td>
+                        <td class="align-middle">0</td>
+                        <td class="align-middle">Dikuasai</td>
                         <td>
                             <form action="" method="POST">
                                 <button type="submit" class="btn btn-outline-dark detail-table-button">Telah Menguasai</button>
@@ -97,7 +97,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <p class="fs-3 fw-bold pt-4">Bahan-Bahan Yang Dibutuhkan</p>
+            <p class="fs-3 fw-bold mt-4">Bahan-Bahan Yang Dibutuhkan</p>
             <hr>
             <p class="detail-note">*Checklist bahan jika sudah ada</p>
             <?php $i = 1; ?>
@@ -112,7 +112,7 @@
             <?php endforeach; ?>
         </div>
         <div class="col">
-        <p class="fs-3 fw-bold pt-4" id="detail-cara">Cara Memasak</p>
+        <p class="fs-3 fw-bold mt-4" id="detail-cara">Cara Memasak</p>
         <hr>
         <p class="detail-note">*Checklist cara yang sudah dilakukan</p>
         <?php $i = 1; ?>

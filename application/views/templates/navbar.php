@@ -30,7 +30,7 @@
                             <a class="nav-link navbar-menu <?= $url == base_url() . 'recipe'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>recipe">Daftar Resep</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link navbar-menu <?= $url == base_url() . 'account'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>account">Akun</a>
+                            <a class="nav-link navbar-menu <?= $url == base_url() . 'profile'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>profile">Akun</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link navbar-menu" href="<?= base_url(); ?>logout">Keluar</a>

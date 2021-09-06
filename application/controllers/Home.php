@@ -32,13 +32,17 @@
         {
             if(!$this->session->username)
             {
+                //fullname
+                $this->form_validation->set_rules('fullname', 'Fullname', 'required|trim', [
+                    'required' => 'Nama tidak boleh kosong!'
+                ]);
                 // username
                 $this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[user.username]', [
                     'required' => 'Username tidak boleh kosong!',
                     'is_unique' => 'Username telah terdaftar!'
                 ]);
                 // password
-                $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[8]|matches[password2]', [
+                $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]', [
                     'required' => 'Password tidak boleh kosong!',
                     'matches' => 'Password tidak cocok!',
                     'min_length' => 'Password terlalu pendek!'
@@ -63,7 +67,8 @@
                 {
                     $data = [
                         'username' => htmlspecialchars($this->input->post('username', true)),
-                        'image' => 'default_user.jpg',
+                        'fullname' => htmlspecialchars($this->input->post('fullname', true)),
+                        'image' => 'default_user.png',
                         'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                         'date_created' => time()
                     ];
@@ -184,7 +189,7 @@
             }
         }
 
-        public function account()
+        public function profile()
         {
             if(!$this->session->username)
             {
@@ -194,11 +199,12 @@
             {
                 $data = [
                     'page_title' => '@' . $this->session->username . ' | FoodGallery',
-                    'url' => base_url() . 'account'
+                    'url' => base_url() . 'profile',
+                    'user' => $this->User->get_username($this->session->username)
                 ];
     
                 $this->load->view('templates/header', $data);
-                $this->load->view('account');
+                $this->load->view('profile');
                 $this->load->view('templates/footer');
                 $this->load->view('templates/script-footer');
             }

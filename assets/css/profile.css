@@ -1,0 +1,17 @@
+.profile-kotak {
+    padding: 50px;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+}
+
+.profile-button {
+    background-color: white;
+    color: #181616;
+}
+
+.profile-button:focus {
+    box-shadow: none !important;
+}

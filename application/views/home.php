@@ -63,7 +63,7 @@
             <?php if(!$this->session->username): ?>
                 <a href="<?= base_url(); ?>login" class="home-today-link">
             <?php else: ?>
-                <a href="<?= base_url(); ?>recipe/detail/<?= $today_recipe->key; ?>#detail-cara" class="home-today-link">
+                <a href="<?= base_url(); ?>recipe/detail/<?= $today_recipe->key; ?>" class="home-today-link">
             <?php endif; ?>
                 Lihat Detail Resep dan Cara Memasak Disini
             </a>
