@@ -6,23 +6,24 @@
 
 .register-kotak {
     width: 500px;
-    /* border: 1px solid black !important; */
+    border: 1px solid black !important;
     padding: 20px;
     border-radius: 5px;
-    background-color: #d0ffb7;
+    /* background-color: #d0ffb7; */
+    background-color: #9b9b9b;
 }
 
 .register-input {
     /* border-radius: 0 !important; */
     border: 1px solid black !important;
-    background-color: #f2f5de;
+    /* background-color: #f2f5de; */
 }
 
-.register-input:focus {
+/* .register-input:focus {
     background-color: #f2f5de;
-}
+} */
 
-.register-input:focus, .register-button-kotak:focus {
+.register-input:focus, .register-button:focus {
     box-shadow: none !important;
 }
 
@@ -33,16 +34,8 @@
 }
 
 .register-button {
-    border: 1px solid black;
+    background-color: white;
     color: #181616;
-    font-weight: 700;
-    background-color: #f2f5de;
-}
-
-.register-button:hover {
-    border: 1px solid black;
-    color: #181616;
-    background-color: #93ff96;
 }
 
 .register-link {

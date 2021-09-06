@@ -12,73 +12,124 @@
     $this->load->view('templates/navbar');
 ?>
 
-<div class="detail-kotak-luar">
+<div class="detail-kotak">
     <p class="detail-judul"><?= $recipe_detail->title; ?></p>
-    <div class="detail-kotak-dalam">
-        <div class="row">
-            <div class="col detail-kotak-kiri">
-                <div class="text-center">
-                    <img src="<?= $recipe_detail->thumb; ?>" alt="<?= $recipe_detail->title; ?>" width="300">
-                </div>
-                <div class="row detail-kotak-kiri-bawah">
-                    <div class="col">
-                        <p>0 Disimpan</p>
-                        <p>0 Dibuat</p>
-                        <p>0 Dikuasai</p>
-                    </div>
-                    <div class="col">
-                        <div class="col text-end">
-                            <button type="submit" class="btn mb-1 detail-button">Simpan</button>
-                            <br>
-                            <button type="submit" class="btn mb-1 detail-button">Pernah Membuat</button>
-                            <br>
-                            <button type="submit" class="btn mb-1 detail-button">Telah Menguasai</button>
-                        </div> 
-                    </div>
-                </div>
-                <div class="row detail-kotak-kiri-bawah">
-                    <p>Waktu = <?= $recipe_detail->times; ?></p>
-                    <p>Porsi = <?= $recipe_detail->servings; ?></p>
-                    <p>Kesulitan = <?= $recipe_detail->dificulty; ?></p>
-                </div>
+    <div class="row detail-row-1">
+        <div class="col">
+            <div class="text-center">
+                <img src="<?= $recipe_detail->thumb; ?>" class="detail-gambar" alt="<?= $recipe_detail->title; ?>">
             </div>
-            <div class="col detail-kotak-kanan">
-                <p class="detail-desc">
-                    <?= $recipe_detail->desc; ?>
+        </div>
+        <div class="col">
+            <table class="table table-hover">
+                <thead>
+                    <tr class=text-center>
+                        <th scope="col">Total</th>
+                        <th scope="col">Keterangan</th>
+                        <th scope="col">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-center">
+                        <td>0</td>
+                        <td>Disimpan</td>
+                        <td>
+                            <form action="" method="POST">
+                                <button type="submit" class="btn btn-outline-dark detail-table-button">Simpan</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        <td>0</td>
+                        <td>Dibuat</td>
+                        <td>
+                            <form action="" method="POST">
+                                <button type="submit" class="btn btn-outline-dark detail-table-button">Pernah Membuat</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        <td>0</td>
+                        <td>Dikuasai</td>
+                        <td>
+                            <form action="" method="POST">
+                                <button type="submit" class="btn btn-outline-dark detail-table-button">Telah Menguasai</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="detail-bawah-table">
+                <p>Note:</p>
+                <p>*Simpan untuk membuat shortcut ke resep dari halaman akun</p>
+                <p>*Pernah Membuat untuk menampilkan apa saya yang pernah anda buat di halaman akun</p>
+                <p>*Telah Menguasai untuk menampilkan apa saya yang telah anda kuasai di halaman akun</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row detail-detail">
+        <div class="col">
+            <p class="text-center fs-5 border-end border-dark">
+                <i class="fas fa-arrow-up"></i> <?= $recipe_detail->dificulty; ?>
+            </p>
+        </div>
+        <div class="col">
+            <p class="text-center fs-5 border-end border-dark">
+                <i class="fas fa-clock"></i> <?= $recipe_detail->times; ?>      
+            </p>
+        </div>
+        <div class="col">
+            <p class="text-center fs-5">
+                <i class="fas fa-utensils"></i> <?= $recipe_detail->servings; ?>
+            </p>
+        </div>
+    </div>
+    <div class="row border border-dark position-relative">
+        <span>
+            <p class="position-absolute fs-3 fw-bold detail-desc-title">
+                Deskripsi
+            </p>
+        </span>
+        <div class="p-5">
+            <?= $recipe_detail->desc; ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="fs-3 fw-bold pt-4">Bahan-Bahan Yang Dibutuhkan</p>
+            <hr>
+            <p class="detail-note">*Checklist bahan jika sudah ada</p>
+            <?php $i = 1; ?>
+            <?php foreach($recipe_detail->ingredient as $ingredient): ?>
+                <p>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input detail-checkbox" id="remember-me-ing-<?= $i; ?>">
+                        <label class="form-check-label" for="remember-me-ing-<?= $i; ?>"><?= $ingredient; ?></label>
+                    </div>
                 </p>
-            </div>
+            <?php $i++; ?>
+            <?php endforeach; ?>
         </div>
-        <div class="row">
-            <div class="col">
-                <div class="detail-bahan">
-                    <p class="detail-mini-judul">Bahan-Bahan Yang Dibutuhkan</p>
-                    <hr>
-                    <p class="detail-note">*Checklist bahan jika sudah ada</p>
-                    <?php foreach($recipe_detail->ingredient as $ingredient): ?>
-                        <p>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input detail-checkbox" id="remember-me">
-                                <label class="form-check-label" for="remember-me"><?= $ingredient; ?></label>
-                            </div>
-                        </p>
-                    <?php endforeach; ?>
+        <div class="col">
+        <p class="fs-3 fw-bold pt-4" id="detail-cara">Cara Memasak</p>
+        <hr>
+        <p class="detail-note">*Checklist cara yang sudah dilakukan</p>
+        <?php $i = 1; ?>
+        <?php foreach($recipe_detail->step as $step): ?>
+            <p>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input detail-checkbox" id="remember-me-step-<?= $i; ?>">
+                    <label class="form-check-label" for="remember-me-step-<?= $i; ?>"><?= $step; ?></label>
                 </div>
-            </div>
-            <div class="col">
-                <div class="detail-cara" id="detail-cara">
-                    <p class="detail-mini-judul">Cara Memasak</p>
-                    <hr>
-                    <p class="detail-note">*Checklist cara memasak yang sudah dilakukan</p>
-                    <?php foreach($recipe_detail->step as $step): ?>
-                        <p>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input detail-checkbox" id="remember-me">
-                                <label class="form-check-label" for="remember-me"><?= $step; ?></label>
-                            </div>
-                        </p>
-                    <?php endforeach; ?>
-                </div>
-            </div>
+            </p>
+        <?php $i++; ?>
+        <?php endforeach; ?>
         </div>
+    </div>
+    <div class="row">
+        <hr>
+        <p class="text-center fs-3 fw-bold">Selamat Memasak <i class="far fa-smile"></i> </p>
+        <hr>
     </div>
 </div>

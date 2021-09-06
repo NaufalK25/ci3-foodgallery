@@ -7,8 +7,8 @@
 }
 
 .home-jumbotron-isi {
-    text-align: center;
     padding: 12.5%;
+    text-align: center;
 }
 
 .home-jumbotron-tulisan {
@@ -34,31 +34,25 @@
 
 .home-jumbotron-input {
     border: 1px solid black !important;
-    background-color: #f2f5de;
+    /* background-color: #f2f5de; */
     width: 400px;
     /* color: black !important; */
 }
 
 .home-jumbotron-input:focus {
-    background-color: #f2f5de;
+    /* background-color: #f2f5de; */
     box-shadow: none !important;
 }
 
 .home-jumbotron-button, .home-today-button {
     border: 1px solid black;
     color: #181616;
-    font-weight: 700;
-    background-color: #f2f5de;
+    background-color: white;
+    /* background-color: #f2f5de; */
 }
 
 .home-jumbotron-button:focus, .home-today-button:focus {
     box-shadow: none !important;
-}
-
-.home-jumbotron-button:hover, .home-today-button:hover {
-    border: 1px solid black;
-    color: #181616;
-    background-color: #93ff96;
 }
 
 .home-today {
@@ -71,6 +65,7 @@
 }
 
 .home-today-card {
-    background-color: #d0ffb7;
+    /* background-color: #d0ffb7; */
+    background-color: #9b9b9b;
     /* border: 1px solid black; */
 }

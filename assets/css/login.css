@@ -9,7 +9,8 @@
     /* border: 1px solid black !important; */
     padding: 20px;
     border-radius: 5px;
-    background-color: #d0ffb7;
+    /* background-color: #d0ffb7; */
+    background-color: #9b9b9b;
 }
 
 .login-alert {
@@ -18,14 +19,14 @@
 
 .login-input {
     border: 1px solid black !important;
-    background-color: #f2f5de;
+    /* background-color: #f2f5de; */
 }
 
-.login-input:focus {
+/* .login-input:focus {
     background-color: #f2f5de;
-}
+} */
 
-.login-input:focus, .login-button-kotak:focus, .alert > button:focus {
+.login-input:focus, .login-button:focus, .alert > button:focus {
     box-shadow: none !important;
 }
 
@@ -36,16 +37,8 @@
 }
 
 .login-button {
-    border: 1px solid black;
+    background-color: white;
     color: #181616;
-    font-weight: 700;
-    background-color: #f2f5de;
-}
-
-.login-button:hover {
-    border: 1px solid black;
-    color: #181616;
-    background-color: #93ff96;
 }
 
 .login-link {

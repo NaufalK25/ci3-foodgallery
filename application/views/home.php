@@ -32,13 +32,13 @@
         <?php else: ?>
             <form action="" method="GET" class="d-flex justify-content-center mb-3">
                 <input class="form-control me-2 home-jumbotron-input" type="search" placeholder="Search" aria-label="Search" autofocus>
-                <button type="submit" class="btn home-jumbotron-button"><i class="fas fa-search"></i> Search</button>
+                <button type="submit" class="btn btn-outline-dark home-jumbotron-button"><i class="fas fa-search"></i> Search</button>
             </form>
         <?php endif; ?>
         <?php if(!$this->session->username): ?>
-            <a href="<?= base_url()?>login" class="btn home-jumbotron-button">
+            <a href="<?= base_url()?>login" class="btn btn-outline-dark home-jumbotron-button">
         <?php else: ?>
-            <a href="<?= base_url(); ?>recipe" class="btn home-jumbotron-button">
+            <a href="<?= base_url(); ?>recipe" class="btn btn-outline-dark home-jumbotron-button">
         <?php endif; ?>
             <i class="fas fa-list-ul"></i> Daftar Resep
         </a>
@@ -83,20 +83,24 @@
                                     <p>0 Dikuasai</p>
                                 </div>
                                 <div class="col text-end">
-                                    <button type="submit" class="btn mb-1 home-today-button">Simpan</button>
-                                    <br>
-                                    <button type="submit" class="btn mb-1 home-today-button">Pernah Membuat</button>
-                                    <br>
-                                    <button type="submit" class="btn mb-1 home-today-button">Telah Menguasai</button>
+                                    <form action="" method="POST">
+                                        <button type="submit" class="btn btn-outline-dark mb-1 home-today-button">Simpan</button>
+                                    </form>
+                                    <form action="" method="POST">
+                                        <button type="submit" class="btn btn-outline-dark mb-1 home-today-button">Pernah Membuat</button>
+                                    </form>
+                                    <form action="" method="POST">
+                                        <button type="submit" class="btn btn-outline-dark mb-1 home-today-button">Telah Menguasai</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="text-center">
                         <?php if(!$this->session->username): ?>
-                            <a href="<?= base_url(); ?>login" class="btn home-today-button">
+                            <a href="<?= base_url(); ?>login" class="btn btn-outline-dark home-today-button">
                         <?php else: ?>
-                            <a href="<?= base_url(); ?>recipe/detail/<?= $today_recipe->key; ?>#detail-cara" class="btn home-today-button">
+                            <a href="<?= base_url(); ?>recipe/detail/<?= $today_recipe->key; ?>#detail-cara" class="btn btn-outline-dark home-today-button">
                         <?php endif; ?>
                             <i class="fas fa-utensils"></i> Cara Masak
                         </a>

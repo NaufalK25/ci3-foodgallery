@@ -1,10 +1,11 @@
 body {
-    background-color: #93ff96;
+    /* background-color: #93ff96; */
     font-family: 'Quicksand', sans-serif, "FontAwesome" !important;
 }
 
 .navbar-luar {
-    background-color: #d0ffb7;
+    /* background-color: #d0ffb7; */
+    background-color: #9b9b9b;
     /* border-bottom: 1px solid #181616; */
 }
 
@@ -23,16 +24,12 @@ body {
 }
 
 .navbar-menu:hover {
-    font-weight: 500;
+    /* font-weight: 500; */
     text-decoration: underline;
-    color: #181616 !important;
+    /* color: #181616 !important; */
 }
 
 .navbar-menu-aktif {
     font-weight: 700;
-    color: #181616 !important;
-}
-
-.navbar-menu-aktif:hover {
-    font-weight: 700;
+    /* color: #181616 !important; */
 }

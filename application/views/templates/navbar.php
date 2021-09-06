@@ -19,10 +19,10 @@
                     <?php if(!$this->session->username): ?>
                         <!-- Belum Login -->
                         <li class="nav-item">
-                            <a class="nav-link navbar-menu <?= $url == base_url() . 'register'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>register">Register</a>
+                            <a class="nav-link navbar-menu <?= $url == base_url() . 'login'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>login">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link navbar-menu <?= $url == base_url() . 'login'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>login">Login</a>
+                            <a class="nav-link navbar-menu <?= $url == base_url() . 'register'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>register">Register</a>
                         </li>
                     <?php else: ?>
                         <!-- Sudah Login -->

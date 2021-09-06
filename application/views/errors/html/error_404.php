@@ -18,11 +18,18 @@
 		<img src="<?= base_url(); ?>assets/img/person-with-empty-plate.png" alt="No Food">
 		<div class="error-tulisan">
 			<p class="fs-3">Tidak Ada Makanan Disini!</p>
-			<p>
-				Kembali ke?
-				<a href="<?= base_url(); ?>" class="error-link">Home</a> |
-				<a href="<?= base_url(); ?>recipe" class="error-link">Daftar Resep</a>
-			</p>
+			<?php if(!$this->session->username): ?>
+				<p>
+					Kembali ke
+					<a href="<?= base_url(); ?>" class="error-link">Home</a>
+				</p>
+			<?php else: ?>
+				<p>
+					Kembali ke?
+					<a href="<?= base_url(); ?>" class="error-link">Home</a> |
+					<a href="<?= base_url(); ?>recipe" class="error-link">Daftar Resep</a>
+				</p>
+			<?php endif; ?>
 		</div>
 	</div>
 </div>
