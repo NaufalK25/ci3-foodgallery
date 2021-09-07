@@ -1,7 +1,7 @@
 .register-kotak-luar {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin: 50px;
 }
 
 .register-kotak {
@@ -47,8 +47,4 @@
 .register-link:hover {
     color: #181616;
     text-decoration: underline;
-}
-
-.register-kosong {
-    height: 50px;
 }

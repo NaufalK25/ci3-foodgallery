@@ -14,7 +14,7 @@
 
 <div class="profile-kotak">
     <div class="row">
-        <div class="col mb-3">
+        <div class="col mb-4 text-center">
             <img src="<?= base_url(); ?>assets/img/profile/<?= $user['image']; ?>" class="profile-image" alt="<?= $user['username']; ?>">
         </div>
         <div class="col">
@@ -30,7 +30,7 @@
                     </tr>
                     <tr>
                         <th scope="row">Akun Dibuat Sejak:</th>
-                        <td><?= $user['date_created']; ?></td>
+                        <td><?= date('d F Y', $user['date_created']); ?></td>
                     </tr>
                 </tbody>
             </table>

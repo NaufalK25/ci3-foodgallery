@@ -16,7 +16,7 @@
     <p class="detail-judul"><?= $recipe_detail->title; ?></p>
     <div class="row detail-row-1">
         <div class="col">
-            <div class="text-center">
+            <div class="mb-3 text-center">
                 <img src="<?= $recipe_detail->thumb; ?>" class="detail-gambar" alt="<?= $recipe_detail->title; ?>">
             </div>
         </div>
@@ -91,7 +91,7 @@
                 Deskripsi
             </p>
         </span>
-        <div class="p-5">
+        <div class="p-4">
             <?= $recipe_detail->desc; ?>
         </div>
     </div>

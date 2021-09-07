@@ -5,7 +5,7 @@
 <div class="navbar-luar">
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand navbar-merek" href="<?= base_url(); ?>home">
+            <a class="navbar-brand navbar-merek" href="<?= base_url(); ?>">
                 <img src="<?= base_url(); ?>assets/img/fg.png" alt="logo" width="30"> FoodGallery
             </a>
             <button class="navbar-toggler navbar-hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,10 +14,10 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link navbar-menu <?= $url == base_url() . 'home'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>home">Home</a>
+                        <a class="nav-link navbar-menu <?= $url == base_url() . 'recipe'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>recipe">Home</a>
                     </li>
                     <?php if(!$this->session->username): ?>
-                        <!-- Belum Login -->
+                        <!-- Before Login -->
                         <li class="nav-item">
                             <a class="nav-link navbar-menu <?= $url == base_url() . 'login'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>login">Login</a>
                         </li>
@@ -25,9 +25,9 @@
                             <a class="nav-link navbar-menu <?= $url == base_url() . 'register'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>register">Register</a>
                         </li>
                     <?php else: ?>
-                        <!-- Sudah Login -->
+                        <!-- After Login -->
                         <li class="nav-item">
-                            <a class="nav-link navbar-menu <?= $url == base_url() . 'recipe'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>recipe">Daftar Resep</a>
+                            <a class="nav-link navbar-menu <?= $url == base_url() . 'recipe-list'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>recipe-list">Daftar Resep</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link navbar-menu <?= $url == base_url() . 'profile'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>profile">Akun</a>

@@ -4,6 +4,25 @@
     class Recipe extends CI_Controller {
         public function index()
         {
+            $this->load->model('Api');
+            $today_recipe = $this->Api->get_today_recipe();
+            $recipe_detail = $this->Api->get_recipe_detail($today_recipe->key);
+
+            $data = [
+                'page_title' => 'FoodGallery',
+                'url' => base_url() . 'recipe',
+                'today_recipe' => $today_recipe,
+                'recipe_detail' => $recipe_detail
+            ];
+
+            $this->load->view('templates/header', $data);
+            $this->load->view('home');
+            $this->load->view('templates/footer');
+            $this->load->view('templates/script-footer');
+        }
+
+        public function get_recipe_list()
+        {
             if(!$this->session->username)
             {
                 redirect('error');
@@ -12,7 +31,7 @@
             {
                 $data = [
                     'page_title' => 'Recipe List | FoodGallery',
-                    'url' => base_url() . 'recipe'
+                    'url' => base_url() . 'recipe-list'
                 ];
     
                 $this->load->view('templates/header', $data);
@@ -22,7 +41,7 @@
             }
         }
 
-        public function detail()
+        public function get_recipe_detail()
         {
             if(!$this->session->username)
             {
@@ -30,7 +49,7 @@
             }
             else
             {
-                $key = $this->uri->segment(3, 0);
+                $key = $this->uri->segment(2, 0);
     
                 $this->load->model('Api'); 
                 $recipe_detail = $this->Api->get_recipe_detail($key);
@@ -51,7 +70,7 @@
                 else
                 {
                     $data = [
-                        'page_title' => 'Resep ' . $recipe_detail->new_title,
+                        'page_title' => $recipe_detail->title,
                         'url' => '',
                         'recipe_detail' => $recipe_detail
                     ];

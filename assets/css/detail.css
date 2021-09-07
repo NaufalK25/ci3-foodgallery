@@ -1,6 +1,6 @@
 .detail-kotak {
     /* border: 1px solid black; */
-    padding: 50px;
+    padding: 50px 20px 50px 20px;
 }
 
 .detail-judul {
@@ -24,6 +24,10 @@
     /* background-color: white; */
 }
 
+.detail-table-button:focus {
+    box-shadow: none !important;
+}
+
 .detail-bawah-table > p{
     margin: 0;
     font-size: 8pt;
@@ -36,7 +40,7 @@
 }
 
 .detail-desc-title {
-    top: -22px;
+    top: -19px;
     background-color:white;
 }
 

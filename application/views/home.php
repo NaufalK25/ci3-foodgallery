@@ -38,7 +38,7 @@
         <?php if(!$this->session->username): ?>
             <a href="<?= base_url()?>login" class="btn btn-outline-dark home-jumbotron-button">
         <?php else: ?>
-            <a href="<?= base_url(); ?>recipe" class="btn btn-outline-dark home-jumbotron-button">
+            <a href="<?= base_url(); ?>recipe-list" class="btn btn-outline-dark home-jumbotron-button">
         <?php endif; ?>
             <i class="fas fa-list-ul"></i> Daftar Resep
         </a>
@@ -63,7 +63,7 @@
             <?php if(!$this->session->username): ?>
                 <a href="<?= base_url(); ?>login" class="home-today-link">
             <?php else: ?>
-                <a href="<?= base_url(); ?>recipe/detail/<?= $today_recipe->key; ?>" class="home-today-link">
+                <a href="<?= base_url(); ?>recipe/<?= $today_recipe->key; ?>" class="home-today-link">
             <?php endif; ?>
                 Lihat Detail Resep dan Cara Memasak Disini
             </a>
@@ -100,7 +100,7 @@
                         <?php if(!$this->session->username): ?>
                             <a href="<?= base_url(); ?>login" class="btn btn-outline-dark home-today-button">
                         <?php else: ?>
-                            <a href="<?= base_url(); ?>recipe/detail/<?= $today_recipe->key; ?>#detail-cara" class="btn btn-outline-dark home-today-button">
+                            <a href="<?= base_url(); ?>recipe/<?= $today_recipe->key; ?>#detail-cara" class="btn btn-outline-dark home-today-button">
                         <?php endif; ?>
                             <i class="fas fa-utensils"></i> Cara Masak
                         </a>

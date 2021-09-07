@@ -5,7 +5,7 @@
 <div class="footer-luar">
     <footer class="navbar navbar-expand-lg navbar-light sticky-bottom">
         <div class="container-fluid">
-            All Right Reserved &copy; 2021 Muhammad Naufal Kateni
+            All Right Reserved &copy; <?= date('Y'); ?> Muhammad Naufal Kateni
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="https://github.com/NaufalK25">
