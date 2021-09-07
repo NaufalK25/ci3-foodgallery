@@ -1,8 +1,16 @@
+.home-alert {
+    z-index: 1 !important;
+    position: absolute !important;
+    top: 20;
+    width: 100%;
+}
+
 .home-jumbotron {
     background-image: url(../img/home-bg.jpg);
     background-size: cover;
     width: 100%;
     height: 500px;
+    z-index: 0;
     /* opacity: .8; */
 }
 
@@ -51,7 +59,7 @@
     /* background-color: #f2f5de; */
 }
 
-.home-jumbotron-button:focus, .home-today-button:focus {
+.home-alert-button:focus, .home-jumbotron-button:focus, .home-today-button:focus {
     box-shadow: none !important;
 }
 

@@ -21,12 +21,12 @@
 			<?php if(!$this->session->username): ?>
 				<p>
 					Kembali ke
-					<a href="<?= base_url(); ?>" class="error-link">Home</a>
+					<a href="<?= base_url(); ?>home" class="error-link">Home</a>
 				</p>
 			<?php else: ?>
 				<p>
 					Kembali ke?
-					<a href="<?= base_url(); ?>" class="error-link">Home</a> |
+					<a href="<?= base_url(); ?>home" class="error-link">Home</a> |
 					<a href="<?= base_url(); ?>recipe-list" class="error-link">Daftar Resep</a>
 				</p>
 			<?php endif; ?>

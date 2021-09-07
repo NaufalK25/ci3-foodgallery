@@ -1,16 +1,21 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
 
-    class Recipe extends CI_Controller {
+    class Recipe_Controller extends CI_Controller {
+        public function __construct()
+        {
+            parent::__construct();
+            $this->load->model('Api');
+        }
+
         public function index()
         {
-            $this->load->model('Api');
             $today_recipe = $this->Api->get_today_recipe();
             $recipe_detail = $this->Api->get_recipe_detail($today_recipe->key);
 
             $data = [
                 'page_title' => 'FoodGallery',
-                'url' => base_url() . 'recipe',
+                'url' => base_url() . 'home',
                 'today_recipe' => $today_recipe,
                 'recipe_detail' => $recipe_detail
             ];
@@ -29,9 +34,14 @@
             }
             else
             {
+                $page = $this->uri->segment(2, 0);
+
+                $recipe_per_page = $this->Api->get_recipe_per_page($page);
+
                 $data = [
                     'page_title' => 'Recipe List | FoodGallery',
-                    'url' => base_url() . 'recipe-list'
+                    'url' => base_url() . 'recipe-list',
+                    'recipe_per_page' => $recipe_per_page
                 ];
     
                 $this->load->view('templates/header', $data);
@@ -51,7 +61,6 @@
             {
                 $key = $this->uri->segment(2, 0);
     
-                $this->load->model('Api'); 
                 $recipe_detail = $this->Api->get_recipe_detail($key);
     
     

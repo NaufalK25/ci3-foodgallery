@@ -21,15 +21,18 @@
             <table class="table table-hover mb-3">
                 <tbody>
                     <tr>
-                        <th scope="row">Nama Lengkap:</th>
+                        <th scope="row">Nama Lengkap</th>
+                        <td>:</td>
                         <td><?= $user['fullname']; ?></td>
                     </tr>
                     <tr>
-                        <th scope="row">Username:</th>
+                        <th scope="row">Username</th>
+                        <td>:</td>
                         <td>@<?= $user['username'] ?></td>
                     </tr>
                     <tr>
-                        <th scope="row">Akun Dibuat Sejak:</th>
+                        <th scope="row">Akun Dibuat Sejak</th>
+                        <td>:</td>
                         <td><?= date('d F Y', $user['date_created']); ?></td>
                     </tr>
                 </tbody>

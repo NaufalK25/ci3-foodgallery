@@ -1,7 +1,7 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
     
-    class Auth extends CI_Controller {
+    class User_Controller extends CI_Controller {
         public function __construct()
         {
             parent::__construct();
@@ -11,8 +11,8 @@
 
         public function index()
         {   
-            // if(!$this->session->username)
-            // {
+            if(!$this->session->username)
+            {
                 // username
                 $this->form_validation->set_rules('username', 'Username', 'required|trim', [
                     'required' => 'Username tidak boleh kosong!',
@@ -51,6 +51,18 @@
                             ];
     
                             $this->session->set_userdata($data);
+
+                            $this->session->set_flashdata(
+                                'message',
+                                '<div class="alert alert-success alert-dismissible d-flex align-items-center fade show home-alert" role="alert">
+                                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                                    <div class="login-alert">
+                                        Selamat datang ' . $data['username'] . ', silakan mencari resep yang anda inginkan!
+                                    </div>
+                                <button type="button" class="btn-close home-alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>'
+                            );
+
                             redirect();
                         }
                         else
@@ -83,18 +95,18 @@
                         redirect('login');
                     }
                 }
-            // }
-            // else
-            // {
-            //     redirect('error');
-            // }
+            }
+            else
+            {
+                redirect('error');
+            }
         }
 
         public function register()
         {
             if(!$this->session->username)
             {
-                //fullname
+                // fullname
                 $this->form_validation->set_rules('fullname', 'Fullname', 'required|trim', [
                     'required' => 'Nama tidak boleh kosong!'
                 ]);

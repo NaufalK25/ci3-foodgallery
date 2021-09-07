@@ -79,5 +79,14 @@
             }
             return $recipe_detail;
         }
+
+        public function get_recipe_per_page($page)
+        {
+            $url = API_URL . 'api/recipes/' . $page;
+            
+            $recipe_per_page = $this->connect_api($url);
+
+            return $recipe_per_page;
+        }
     }
 ?>

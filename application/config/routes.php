@@ -49,16 +49,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'recipe';
+$route['default_controller'] = 'recipe_controller';
 $route['404_override'] = 'error_controller/error_404';
 $route['translate_uri_dashes'] = FALSE;
 
-// recipe
-$route['recipe-list'] = 'recipe/get_recipe_list';
-$route['recipe/(:any)'] = 'recipe/get_recipe_detail';
+// recipe_controller
+$route['home'] = 'recipe_controller';
+$route['recipe-list/(:num)'] = 'recipe_controller/get_recipe_list';
+$route['recipe/(:any)'] = 'recipe_controller/get_recipe_detail';
 
-// auth
-$route['login'] = 'auth';
-$route['register'] = 'auth/register';
-$route['logout'] = 'auth/logout';
-$route['profile'] = 'auth/get_user_profile';
+// user_controller
+$route['login'] = 'user_controller';
+$route['register'] = 'user_controller/register';
+$route['logout'] = 'user_controller/logout';
+$route['profile'] = 'user_controller/get_user_profile';
