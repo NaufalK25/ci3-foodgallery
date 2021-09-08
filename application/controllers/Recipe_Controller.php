@@ -13,18 +13,18 @@
         {
             $today_recipe = $this->Api->get_today_recipe();
             $recipe_detail = $this->Api->get_recipe_detail($today_recipe->key);
-            $count_saved = $this->Recipe->count_rows('saved_recipe', $today_recipe->title);
-            $count_made = $this->Recipe->count_rows('made_recipe', $today_recipe->title);
-            $count_mastered = $this->Recipe->count_rows('mastered_recipe', $today_recipe->title);
+            // $count_saved = $this->Recipe->count_rows('saved_recipe', $today_recipe->title);
+            // $count_made = $this->Recipe->count_rows('made_recipe', $today_recipe->title);
+            // $count_mastered = $this->Recipe->count_rows('mastered_recipe', $today_recipe->title);
 
             $data = [
                 'page_title' => 'FoodGallery',
                 'url' => base_url() . 'home',
                 'today_recipe' => $today_recipe,
                 'recipe_detail' => $recipe_detail,
-                'count_saved' => $count_saved,
-                'count_made' => $count_made,
-                'count_mastered' => $count_mastered
+                // 'count_saved' => $count_saved,
+                // 'count_made' => $count_made,
+                // 'count_mastered' => $count_mastered
             ];
 
             $this->load->view('templates/header', $data);

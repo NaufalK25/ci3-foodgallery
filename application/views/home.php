@@ -1,8 +1,5 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
-
-    // var_dump($today_recipe);
-    // var_dump($recipe_detail);
 ?>
 
 <link rel="stylesheet" href="<?= base_url(); ?>assets/css/home.css">
@@ -85,9 +82,9 @@
                             <h5 class="card-title fw-bold"><?= $today_recipe->new_title; ?></h5>
                             <div class="row">
                                 <div class="col">
-                                    <p><?= $count_saved; ?>x Disimpan</p>
+                                    <!-- <p><?= $count_saved; ?>x Disimpan</p>
                                     <p><?= $count_made; ?>x Pernah Dibuat</p>
-                                    <p><?= $count_mastered; ?>x Telah Dikuasai</p>
+                                    <p><?= $count_mastered; ?>x Telah Dikuasai</p> -->
                                 </div>
                                 <div class="col text-end">
                                     <?php if(!$this->session->username): ?>
