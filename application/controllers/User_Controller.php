@@ -232,5 +232,10 @@
                 $this->load->view('templates/script-footer');
             }
         }
+
+        public function error()
+        {
+            echo 'error';
+        }
     }
 ?>
