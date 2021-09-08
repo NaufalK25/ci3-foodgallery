@@ -9,7 +9,7 @@
 <body>
 
 <?php
-    $this->load->view('../templates/navbar');
+    $this->load->view('../../templates/navbar');
 ?>
 
 <div class="d-flex justify-content-center">	
