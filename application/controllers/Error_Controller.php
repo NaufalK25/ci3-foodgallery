@@ -10,7 +10,7 @@
             ];
 
             $this->load->view('templates/header', $data);
-            $this->load->view('errors/html/error_404');
+            $this->load->view('error_404');
             $this->load->view('templates/footer');
             $this->load->view('templates/script-footer');
         }
