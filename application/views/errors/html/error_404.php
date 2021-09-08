@@ -9,7 +9,7 @@
 <body>
 
 <?php
-    $this->load->view('../../templates/navbar');
+    $this->load->view('https://ci3-foodgallery.herokuapp.com/views/templates/navbar');
 ?>
 
 <div class="d-flex justify-content-center">	
