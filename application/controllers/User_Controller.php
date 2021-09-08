@@ -194,7 +194,7 @@
                 
                 $saved_recipe = $this->Recipe->show_recipe_by_user('saved_recipe', $this->session->username);
                 $made_recipe = $this->Recipe->show_recipe_by_user('made_recipe', $this->session->username);
-                $mastered_recipe = $this->Recipe->show_recipe_by_user('saved_recipe', $this->session->username);
+                $mastered_recipe = $this->Recipe->show_recipe_by_user('mastered_recipe', $this->session->username);
                 
                 $saved_recipe_details = [];
                 foreach($saved_recipe as $saved)

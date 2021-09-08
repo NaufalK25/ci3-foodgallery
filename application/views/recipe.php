@@ -36,7 +36,7 @@
         <li><i class="fas fa-arrow-up"></i> <?= $recipe->dificulty; ?></li>
         <li><i class="fas fa-clock"></i> <?= $recipe->times; ?></li>
         <li><i class="fas fa-utensils"></i> <?= $recipe->portion; ?></li>
-        <a href="<?= $recipe->key ?>">Detail</a>
+        <a href="<?= base_url(); ?>recipe/<?= $recipe->key ?>">Detail</a>
     <?php $i++; ?>
     <?php endforeach; ?>
 </ul>
