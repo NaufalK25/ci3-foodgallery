@@ -30,49 +30,13 @@
     <?php foreach($recipe_per_page as $recipe): ?>
         <li><?= $i; ?></li>
         <li><?= $recipe->title; ?></li>
-        <li><img src="<?= $recipe->thumb; ?>" alt="<?= $recipe->title; ?>"></li>
+        <li><img src="<?= $recipe->thumb; ?>" alt="<?= $recipe->title; ?>" width="300"></li>
+        <li><?= $recipe->new_title; ?></li>
         <li><?= $recipe->key; ?></li>
         <li><i class="fas fa-arrow-up"></i> <?= $recipe->dificulty; ?></li>
         <li><i class="fas fa-clock"></i> <?= $recipe->times; ?></li>
         <li><i class="fas fa-utensils"></i> <?= $recipe->portion; ?></li>
-            <table class="table table-hover">
-                <thead>
-                    <tr class=text-center>
-                        <th scope="col">Total</th>
-                        <th scope="col">Keterangan</th>
-                        <th scope="col">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="text-center">
-                        <td class="align-middle">0</td>
-                        <td class="align-middle">Disimpan</td>
-                        <td>
-                            <form action="" method="POST">
-                                <button type="submit" class="btn btn-outline-dark">Simpan</button>
-                            </form>
-                        </td>
-                    </tr>
-                    <tr class="text-center">
-                        <td class="align-middle">0</td>
-                        <td class="align-middle">Dibuat</td>
-                        <td>
-                            <form action="" method="POST">
-                                <button type="submit" class="btn btn-outline-dark">Pernah Membuat</button>
-                            </form>
-                        </td>
-                    </tr>
-                    <tr class="text-center">
-                        <td class="align-middle">0</td>
-                        <td class="align-middle">Dikuasai</td>
-                        <td>
-                            <form action="" method="POST">
-                                <button type="submit" class="btn btn-outline-dark">Telah Menguasai</button>
-                            </form>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <a href="<?= $recipe->key ?>">Detail</a>
     <?php $i++; ?>
     <?php endforeach; ?>
 </ul>

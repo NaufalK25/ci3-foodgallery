@@ -5,7 +5,6 @@
         public function __construct()
         {
             parent::__construct();
-            $this->load->library('form_validation');
             $this->load->model('User');
         }
 
@@ -190,10 +189,41 @@
             }
             else
             {
+                $this->load->model('Recipe');
+                $this->load->model('Api');
+                
+                $saved_recipe = $this->Recipe->show_recipe_by_user('saved_recipe', $this->session->username);
+                $made_recipe = $this->Recipe->show_recipe_by_user('made_recipe', $this->session->username);
+                $mastered_recipe = $this->Recipe->show_recipe_by_user('saved_recipe', $this->session->username);
+                
+                $saved_recipe_details = [];
+                foreach($saved_recipe as $saved)
+                {
+                    array_push($saved_recipe_details, $this->Api->get_recipe_detail($saved['recipe_key']));
+                }
+
+                $made_recipe_details = [];
+                foreach($made_recipe as $made)
+                {
+                    array_push($made_recipe_details, $this->Api->get_recipe_detail($made['recipe_key']));
+                }
+
+                $mastered_recipe_details = [];
+                foreach($mastered_recipe as $mastered)
+                {
+                    array_push($mastered_recipe_details, $this->Api->get_recipe_detail($mastered['recipe_key']));
+                }
+                
                 $data = [
                     'page_title' => '@' . $this->session->username . ' | FoodGallery',
                     'url' => base_url() . 'profile',
-                    'user' => $this->User->get_username($this->session->username)
+                    'user' => $this->User->get_username($this->session->username),
+                    'saved_recipe' => $saved_recipe,
+                    'made_recipe' => $made_recipe,
+                    'mastered_recipe' => $mastered_recipe,
+                    'saved_recipe_details' => $saved_recipe_details,
+                    'made_recipe_details' => $made_recipe_details,
+                    'mastered_recipe_details' => $mastered_recipe_details
                 ];
     
                 $this->load->view('templates/header', $data);

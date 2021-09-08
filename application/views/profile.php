@@ -54,13 +54,28 @@
     <div class="row">
         <p class="fs-3 fw-bold mt-5" id="profile-simpan">Simpan</p>
         <hr>
+        <?php for($i = 0; $i < count($saved_recipe); $i++): ?>
+            <p><?= $saved_recipe_details[$i]->title ?></p>
+            <img src="<?= $saved_recipe_details[$i]->thumb ?>" alt="<?= $saved_recipe_details[$i]->title ?>" class="profile-saved-image">
+            <a href="<?= base_url(); ?>recipe/<?= $saved_recipe[$i]['recipe_key'] ?>">Detail</a>
+        <?php endfor; ?>
     </div>
     <div class="row">
         <p class="fs-3 fw-bold mt-5" id="profile-buat">Pernah Dibuat</p>
         <hr>
+        <?php for($i = 0; $i < count($made_recipe); $i++): ?>
+            <p><?= $made_recipe_details[$i]->title ?></p>
+            <img src="<?= $made_recipe_details[$i]->thumb ?>" alt="<?= $made_recipe_details[$i]->title ?>" class="profile-made-image">
+            <a href="<?= base_url(); ?>recipe/<?= $made_recipe[$i]['recipe_key'] ?>">Detail</a>
+        <?php endfor; ?>
     </div>
     <div class="row">
         <p class="fs-3 fw-bold mt-5" id="profile-kuasa">Telah Menguasai</p>
         <hr>
+        <?php for($i = 0; $i < count($mastered_recipe); $i++): ?>
+            <p><?= $mastered_recipe_details[$i]->title ?></p>
+            <img src="<?= $mastered_recipe_details[$i]->thumb ?>" alt="<?= $mastered_recipe_details[$i]->title ?>" class="profile-mastered-image">
+            <a href="<?= base_url(); ?>recipe/<?= $mastered_recipe[$i]['recipe_key'] ?>">Detail</a>
+        <?php endfor; ?>
     </div>
 </div>

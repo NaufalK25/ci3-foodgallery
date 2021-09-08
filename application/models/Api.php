@@ -40,16 +40,16 @@
             
             $recipe = $this->connect_api($url);
             
-            $random_number = rand(0, count($recipe) - 1);
+            // $random_number = rand(0, count($recipe) - 1);
             
-            $recipe[$random_number]->new_title = $this->get_recipe_name($recipe[$random_number]->key);
+            // $recipe[$random_number]->new_title = $this->get_recipe_name($recipe[$random_number]->key);
 
-            return $recipe[$random_number];
+            // return $recipe[$random_number];
 
-            // $idx = 0;
-            // $recipe[$idx]->new_title = $this->get_recipe_name($recipe[$idx]->key);
+            $idx = 0;
+            $recipe[$idx]->new_title = $this->get_recipe_name($recipe[$idx]->key);
 
-            // return $recipe[$idx];
+            return $recipe[$idx];
         }
 
         public function get_recipe_detail($recipe_key)
@@ -85,6 +85,11 @@
             $url = API_URL . 'api/recipes/' . $page;
             
             $recipe_per_page = $this->connect_api($url);
+
+            foreach($recipe_per_page as $recipe)
+            {
+                $recipe->new_title = $this->get_recipe_name($recipe->key);
+            }
 
             return $recipe_per_page;
         }

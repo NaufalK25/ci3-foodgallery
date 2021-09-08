@@ -1,7 +1,7 @@
 .home-alert {
     z-index: 1 !important;
     position: absolute !important;
-    top: 20;
+    top: 20 !important;
     width: 100%;
 }
 
@@ -59,7 +59,7 @@
     /* background-color: #f2f5de; */
 }
 
-.home-alert-button:focus, .home-jumbotron-button:focus, .home-today-button:focus {
+.home-alert-button:focus, .home-jumbotron-button:focus, .home-today-button:focus, .alert-button:focus {
     box-shadow: none !important;
 }
 
@@ -76,4 +76,8 @@
     /* background-color: #d0ffb7; */
     background-color: #9b9b9b;
     /* border: 1px solid black; */
+}
+
+.alert-recipe {
+    font-size: 10pt;
 }

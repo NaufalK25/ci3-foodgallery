@@ -17,3 +17,7 @@
 .profile-button:focus {
     box-shadow: none !important;
 }
+
+.profile-saved-image, .profile-made-image, .profile-mastered-image {
+    width: 300px;
+}

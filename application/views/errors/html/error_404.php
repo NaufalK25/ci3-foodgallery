@@ -27,7 +27,7 @@
 				<p>
 					Kembali ke?
 					<a href="<?= base_url(); ?>home" class="error-link">Home</a> |
-					<a href="<?= base_url(); ?>recipe-list" class="error-link">Daftar Resep</a>
+					<a href="<?= base_url(); ?>recipe-list/1" class="error-link">Daftar Resep</a>
 				</p>
 			<?php endif; ?>
 		</div>
