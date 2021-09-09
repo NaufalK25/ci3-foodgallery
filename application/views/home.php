@@ -13,6 +13,9 @@
 ?>
 
 <?= $this->session->flashdata('message'); ?>
+<?= $this->session->flashdata('already_saved'); ?>
+<?= $this->session->flashdata('already_made'); ?>
+<?= $this->session->flashdata('already_mastered'); ?>
 
 <!-- Start of Jumbotron -->
 <div class="home-jumbotron">
@@ -74,49 +77,66 @@
         </div>
         <!-- <div class="col-lg-2"></div> -->
         <div class="col-lg-5 ms-lg-5">
-            <div class="card home-today-card">
+            <div class="card border-dark">
                 <img src="<?= $today_recipe->thumb ?>" class="card-img-top" alt="<?= $today_recipe->title; ?>">
                 <div class="card-body">
                     <div class=row>
                         <div class="col">
                             <h5 class="card-title fw-bold"><?= $today_recipe->new_title; ?></h5>
                             <div class="row">
-                                <div class="col">
-                                    <p><?= $count_saved; ?>x Disimpan</p>
-                                    <p><?= $count_made; ?>x Pernah Dibuat</p>
-                                    <p><?= $count_mastered; ?>x Telah Dikuasai</p>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><?= $count_saved; ?>x Disimpan</p>
+                                    </div>
+                                    <div class="col text-end">
+                                        <?php if(!$this->session->username): ?>
+                                            <a href="<?= base_url(); ?>login" class="btn btn-outline-dark mb-1 home-today-button">Simpan</a>
+                                        <?php else: ?>
+                                            <form action="<?= base_url(); ?>Recipe_Controller/post_saved_recipe" method="POST">
+                                                <input type="hidden" name="saved-page" id="saved-page" value="home">
+                                                <input type="hidden" name="saved-username" id="saved-username" value="<?= $this->session->username; ?>">
+                                                <input type="hidden" name="saved-key" id="saved-key" value="<?= $today_recipe->key; ?>">
+                                                <input type="hidden" name="saved-title" id="saved-title" value="<?= $recipe_detail->title; ?>">
+                                                <button type="submit" class="btn btn-outline-dark home-today-button">Simpan</button>
+                                            </form>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
-                                <div class="col text-end">
-                                    <?php if(!$this->session->username): ?>
-                                        <a href="<?= base_url(); ?>login" class="btn btn-outline-dark mb-1 home-today-button">Simpan</a>
-                                        <a href="<?= base_url(); ?>login" class="btn btn-outline-dark mb-1 home-today-button">Pernah Membuat</a>
-                                        <a href="<?= base_url(); ?>login" class="btn btn-outline-dark mb-1 home-today-button">Telah Menguasai</a>
-                                    <?php else: ?>
-                                        <?= $this->session->flashdata('already_saved'); ?>
-                                        <form action="<?= base_url(); ?>recipe_controller/post_saved_recipe" method="POST">
-                                            <input type="hidden" name="saved-page" id="saved-page" value="home">
-                                            <input type="hidden" name="saved-username" id="saved-username" value="<?= $this->session->username; ?>">
-                                            <input type="hidden" name="saved-key" id="saved-key" value="<?= $today_recipe->key; ?>">
-                                            <input type="hidden" name="saved-title" id="saved-title" value="<?= $today_recipe->title; ?>">
-                                            <button type="submit" class="btn btn-outline-dark mb-1 home-today-button">Simpan</button>
-                                        </form>
-                                        <?= $this->session->flashdata('already_made'); ?>
-                                        <form action="<?= base_url(); ?>recipe_controller/post_made_recipe" method="POST">
-                                            <input type="hidden" name="made-page" id="made-page" value="home">
-                                            <input type="hidden" name="made-username" id="made-username" value="<?= $this->session->username; ?>">
-                                            <input type="hidden" name="made-key" id="made-key" value="<?= $today_recipe->key; ?>">
-                                            <input type="hidden" name="made-title" id="made-title" value="<?= $today_recipe->title; ?>">
-                                            <button type="submit" class="btn btn-outline-dark mb-1 home-today-button">Pernah Membuat</button>
-                                        </form>
-                                        <?= $this->session->flashdata('already_mastered'); ?>
-                                        <input type="hidden" name="mastered-page" id="mastered-page" value="home">
-                                        <form action="<?= base_url(); ?>recipe_controller/post_mastered_recipe" method="POST">
-                                            <input type="hidden" name="mastered-username" id="mastered-username" value="<?= $this->session->username; ?>">
-                                            <input type="hidden" name="mastered-key" id="mastered-key" value="<?= $today_recipe->key; ?>">
-                                            <input type="hidden" name="mastered-title" id="mastered-title" value="<?= $today_recipe->title; ?>">
-                                            <button type="submit" class="btn btn-outline-dark mb-1 home-today-button">Telah Menguasai</button>
-                                        </form>
-                                    <?php endif; ?>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><?= $count_made; ?>x Pernah Dibuat</p>
+                                    </div>
+                                    <div class="col text-end">
+                                        <?php if(!$this->session->username): ?>
+                                            <a href="<?= base_url(); ?>login" class="btn btn-outline-dark mb-1 home-today-button">Pernah Membuat</a>
+                                        <?php else: ?>
+                                            <form action="<?= base_url(); ?>Recipe_Controller/post_made_recipe" method="POST">
+                                                <input type="hidden" name="made-page" id="made-page" value="home">
+                                                <input type="hidden" name="made-username" id="made-username" value="<?= $this->session->username; ?>">
+                                                <input type="hidden" name="made-key" id="made-key" value="<?= $today_recipe->key; ?>">
+                                                <input type="hidden" name="made-title" id="made-title" value="<?= $recipe_detail->title; ?>">
+                                                <button type="submit" class="btn btn-outline-dark home-today-button">Pernah Membuat</button>
+                                            </form>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><?= $count_mastered; ?>x Telah Dikuasai</p>
+                                    </div>
+                                    <div class="col text-end">
+                                        <?php if(!$this->session->username): ?>
+                                            <a href="<?= base_url(); ?>login" class="btn btn-outline-dark mb-1 home-today-button">Telah Menguasai</a>
+                                        <?php else: ?>
+                                            <form action="<?= base_url(); ?>Recipe_Controller/post_mastered_recipe" method="POST">
+                                                <input type="hidden" name="mastered-page" id="mastered-page" value="home">
+                                                <input type="hidden" name="mastered-username" id="mastered-username" value="<?= $this->session->username; ?>">
+                                                <input type="hidden" name="mastered-key" id="mastered-key" value="<?= $today_recipe->key; ?>">
+                                                <input type="hidden" name="mastered-title" id="mastered-title" value="<?= $recipe_detail->title; ?>">
+                                                <button type="submit" class="btn btn-outline-dark home-today-button">Telah Menguasai</button>
+                                            </form>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>

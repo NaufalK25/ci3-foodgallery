@@ -26,7 +26,7 @@
     background-color: #f2f5de;
 } */
 
-.login-input:focus, .login-button:focus, .alert > button:focus {
+.login-input:focus, .login-button:focus {
     box-shadow: none !important;
 }
 

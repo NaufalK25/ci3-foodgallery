@@ -33,3 +33,14 @@ body {
     font-weight: 700;
     /* color: #181616 !important; */
 }
+
+.alert-button:focus {
+    box-shadow: none !important;
+}
+
+.alert-recipe {
+    z-index: 1 !important;
+    position: absolute !important;
+    top: 20 !important;
+    width: 100%;
+}

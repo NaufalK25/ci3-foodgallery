@@ -124,14 +124,14 @@
 
             if($is_recipe_exist)
             {
-                $message = 'Resep Sudah Pernah Disimpan';
+                $message = 'Resep Gagal Ditambahkan Karena Sudah Ada Di Daftar Resep Yang Disimpan';
                 $type = 'danger';
                 $svg = '<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>';
             }
             else
             {
                 $this->Recipe->add_new_recipe($table, $data);
-                $message = 'Resep Berhasil Disimpan';
+                $message = 'Resep Berhasil Ditambahkan Ke Daftar Resep Yang Disimpan';
                 $type = 'success';
                 $svg = '<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>';
                 
@@ -169,21 +169,21 @@
 
             if($is_recipe_exist)
             {
-                $message = 'Resep Gagal Ditambahkan';
+                $message = 'Resep Gagal Ditambahkan Karena Sudah Ada Di Daftar Resep Yang Pernah Dibuat';
                 $type = 'danger';
                 $svg = '<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>';
             }
             else
             {
                 $this->Recipe->add_new_recipe($table, $data);
-                $message = 'Resep Berhasil Ditambahkan';
+                $message = 'Resep Berhasil Ditambahkan Ke Daftar Resep Yang Pernah Dibuat';
                 $type = 'success';
                 $svg = '<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>';
                 
             }
 
             $this->session->set_flashdata(
-                'already_saved',
+                'already_made',
                 '<div class="alert alert-' . $type . ' alert-dismissible d-flex align-items-center fade show text-start alert-recipe" role="alert">
                     ' . $svg . '
                     <div class="login-alert">
@@ -214,21 +214,21 @@
 
             if($is_recipe_exist)
             {
-                $message = 'Resep Gagal Ditambahkan';
+                $message = 'Resep Gagal Ditambahkan Karena Sudah Ada Di Daftar Resep Yang Telah Dikuasai';
                 $type = 'danger';
                 $svg = '<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>';
             }
             else
             {
                 $this->Recipe->add_new_recipe($table, $data);
-                $message = 'Resep Berhasil Ditambahkan';
+                $message = 'Resep Berhasil Ditambahkan Ke Daftar Resep Yang Telah Dikuasai';
                 $type = 'success';
                 $svg = '<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>';
                 
             }
 
             $this->session->set_flashdata(
-                'already_saved',
+                'already_mastered',
                 '<div class="alert alert-' . $type . ' alert-dismissible d-flex align-items-center fade show text-start alert-recipe" role="alert">
                     ' . $svg . '
                     <div class="login-alert">

@@ -19,7 +19,7 @@
              
 <div class="detail-kotak">
     <p class="detail-judul"><?= $recipe_detail->title; ?></p>
-    <div class="row detail-row-1">
+    <div class="row m-0 detail-row-1">
         <div class="col">
             <div class="mb-3 text-center">
                 <img src="<?= $recipe_detail->thumb; ?>" class="detail-gambar" alt="<?= $recipe_detail->title; ?>">
@@ -39,7 +39,7 @@
                         <td class="align-middle"><?= $count_saved; ?></td>
                         <td class="align-middle">Disimpan</td>
                         <td>
-                            <form action="<?= base_url(); ?>recipe_controller/post_saved_recipe" method="POST">
+                            <form action="<?= base_url(); ?>Recipe_Controller/post_saved_recipe" method="POST">
                                 <input type="hidden" name="saved-page" id="saved-page" value="recipe/<?= $this->uri->segment(2, 0) ?>">
                                 <input type="hidden" name="saved-username" id="saved-username" value="<?= $this->session->username; ?>">
                                 <input type="hidden" name="saved-key" id="saved-key" value="<?= $this->uri->segment(2, 0); ?>">
@@ -52,7 +52,7 @@
                         <td class="align-middle"><?= $count_made; ?></td>
                         <td class="align-middle">Dibuat</td>
                         <td>
-                            <form action="<?= base_url(); ?>recipe_controller/post_made_recipe" method="POST">
+                            <form action="<?= base_url(); ?>Recipe_Controller/post_made_recipe" method="POST">
                                 <input type="hidden" name="made-page" id="made-page" value="recipe/<?= $this->uri->segment(2, 0) ?>">
                                 <input type="hidden" name="made-username" id="made-username" value="<?= $this->session->username; ?>">
                                 <input type="hidden" name="made-key" id="made-key" value="<?= $this->uri->segment(2, 0); ?>">
@@ -65,7 +65,7 @@
                         <td class="align-middle"><?= $count_mastered; ?></td>
                         <td class="align-middle">Dikuasai</td>
                         <td>
-                            <form action="<?= base_url(); ?>recipe_controller/post_mastered_recipe" method="POST">
+                            <form action="<?= base_url(); ?>Recipe_Controller/post_mastered_recipe" method="POST">
                                 <input type="hidden" name="mastered-page" id="mastered-page" value="recipe/<?= $this->uri->segment(2, 0) ?>">
                                 <input type="hidden" name="mastered-username" id="mastered-username" value="<?= $this->session->username; ?>">
                                 <input type="hidden" name="mastered-key" id="mastered-key" value="<?= $this->uri->segment(2, 0); ?>">
@@ -85,7 +85,7 @@
         </div>
     </div>
 
-    <div class="row detail-detail">
+    <div class="row m-0 justify-content-center detail-detail">
         <div class="col">
             <p class="text-center fs-5 border-end border-dark">
                 <i class="fas fa-arrow-up"></i> <?= $recipe_detail->dificulty; ?>

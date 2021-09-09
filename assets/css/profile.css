@@ -1,4 +1,5 @@
 .profile-kotak {
+    z-index: 0;
     padding: 50px 20px 50px 20px;
 }
 
@@ -11,13 +12,34 @@
 
 .profile-button {
     background-color: white;
+}
+
+.profile-button, .profile-button-danger {
     color: #181616;
 }
 
-.profile-button:focus {
+.profile-button:focus, .profile-button-danger:focus {
     box-shadow: none !important;
 }
 
 .profile-saved-image, .profile-made-image, .profile-mastered-image {
-    width: 300px;
+    width: 80%;
+}
+
+.profile-link {
+    color: #181616;
+    text-decoration: none;
+}
+
+.profile-link:hover {
+    color: #181616;
+    text-decoration: underline;
+}
+
+.profile-card {
+    width: 15.5rem;
+}
+
+.profile-card-tulisan {
+    font-size: 10pt;
 }

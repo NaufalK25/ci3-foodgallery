@@ -1,10 +1,3 @@
-.home-alert {
-    z-index: 1 !important;
-    position: absolute !important;
-    top: 20 !important;
-    width: 100%;
-}
-
 .home-jumbotron {
     background-image: url(../img/home-bg.jpg);
     background-size: cover;
@@ -59,7 +52,7 @@
     /* background-color: #f2f5de; */
 }
 
-.home-alert-button:focus, .home-jumbotron-button:focus, .home-today-button:focus, .alert-button:focus {
+.home-jumbotron-button:focus, .home-today-button:focus {
     box-shadow: none !important;
 }
 
@@ -70,14 +63,4 @@
 .home-today-desc {
     overflow: auto;
     height: 375px;
-}
-
-.home-today-card {
-    /* background-color: #d0ffb7; */
-    background-color: #9b9b9b;
-    /* border: 1px solid black; */
-}
-
-.alert-recipe {
-    font-size: 10pt;
 }
