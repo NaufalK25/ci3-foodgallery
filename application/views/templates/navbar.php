@@ -31,7 +31,7 @@
                             <a class="nav-link navbar-menu <?= $url == base_url() . 'recipe-list'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>recipe-list/1">Daftar Resep</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link navbar-menu <?= $url == base_url() . 'profile'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>profile">Akun</a>
+                            <a class="nav-link navbar-menu <?= $url == base_url() . 'profile'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>profile">Profil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link navbar-menu" href="<?= base_url(); ?>logout">Keluar</a>

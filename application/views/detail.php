@@ -113,7 +113,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-lg-6">
             <p class="fs-3 fw-bold mt-4">Bahan-Bahan Yang Dibutuhkan</p>
             <hr>
             <p class="detail-note">*Checklist bahan jika sudah ada</p>
@@ -128,7 +128,7 @@
             <?php $i++; ?>
             <?php endforeach; ?>
         </div>
-        <div class="col">
+        <div class="col-lg-6">
         <p class="fs-3 fw-bold mt-4" id="detail-cara">Cara Memasak</p>
         <hr>
         <p class="detail-note">*Checklist cara yang sudah dilakukan</p>
@@ -144,7 +144,7 @@
         <?php endforeach; ?>
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-4">
         <hr>
         <p class="text-center fs-3 fw-bold">Selamat Memasak <i class="far fa-smile"></i> </p>
         <hr>

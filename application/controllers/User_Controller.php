@@ -45,8 +45,6 @@
                         {
                             $data = [
                                 'username' => $user['username']
-                                // 'image' => $user['image'],
-                                // 'date_created' => $user['date_created']
                             ];
     
                             $this->session->set_userdata($data);
@@ -123,6 +121,7 @@
                 // confirm password
                 $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]', [
                     'required' => 'Konfirmasi Password tidak boleh kosong!',
+                    'matches' => 'Password tidak cocok'
                 ]);
     
                 if($this->form_validation->run( ) == false)

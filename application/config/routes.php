@@ -54,12 +54,12 @@ $route['404_override'] = 'Error_Controller/error_404';
 $route['translate_uri_dashes'] = FALSE;
 
 // recipe_controller
-$route['home']['GET'] = 'Recipe_Controller';
-$route['recipe-list/:num']['GET'] = 'Recipe_Controller/get_recipe_list';
-$route['recipe/:any']['GET'] = 'Recipe_Controller/get_recipe_detail';
+$route['home'] = 'Recipe_Controller';
+$route['recipe-list/:num'] = 'Recipe_Controller/get_recipe_list';
+$route['recipe/:any'] = 'Recipe_Controller/get_recipe_detail';
 
 // user_controller
-$route['login']['POST'] = 'User_Controller';
-$route['register']['POST'] = 'User_Controller/register';
-$route['logout']['GET'] = 'User_Controller/logout';
-$route['profile']['GET'] = 'User_Controller/get_user_profile';
+$route['login'] = 'User_Controller';
+$route['register'] = 'User_Controller/register';
+$route['logout'] = 'User_Controller/logout';
+$route['profile'] = 'User_Controller/get_user_profile';
