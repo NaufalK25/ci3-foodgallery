@@ -51,26 +51,48 @@
     <!-- End of Profile -->
 
     <!-- Start of Saved Recipe -->
-    <div class="row">
-        <p class="fs-3 fw-bold mt-5" id="profile-simpan">Resep Yang Disimpan</p>
+    <div class="row m-0">
+        <p class="fs-3 fw-bold mt-5" id="profile-buat">Resep Yang Disimpan</p>
         <hr>
-        <div class="row m-0 mt-3 gx-5 justify-content-center">
+        <div class="row m-0 gy-5 px-0 justify-content-center">
             <?php for($i = 0; $i < count($saved_recipe_details); $i++): ?>
-                <div class="col-lg-4 mb-3 text-center">
-                    <div class="card border-dark profile-card">
-                        <img src="<?= $saved_recipe_details[$i]['thumb'] ?>" alt="<?= $saved_recipe_details[$i]['recipe_title'] ?>" class="card-img-top">
-                        <div class="card-body">
-                            <p class="card-title fw-bold text-start profile-card-tulisan"><?= $saved_recipe_details[$i]['recipe_title'] ?></p>
-                            <div class="row">
-                                <div class="col">
-                                    <a href="<?= base_url(); ?>recipe/detail/<?= $saved_recipe_details[$i]['recipe_key'] ?>" class="btn btn-outline-dark me-2 profile-button">Detail</a>
+                <div class="col-lg-4 mx-5 p-0 card border-dark text-center profile-card">
+                    <img src="<?= $saved_recipe_details[$i]['thumb'] ?>" alt="<?= $saved_recipe_details[$i]['recipe_title'] ?>" class="card-img-top" height="150">
+                    <div class="card-body">
+                        <div class="row h-50">
+                            <p class="card-title fw-bold text-start profile-card-tulisan h-25"><?= $saved_recipe_details[$i]['recipe_title'] ?></p>
+                        </div>
+                        <div class="row h-50 align-items-end">
+                            <div class="col">
+                                <a href="<?= base_url(); ?>recipe/detail/<?= $saved_recipe_details[$i]['recipe_key'] ?>" class="btn btn-outline-dark me-2 profile-button">Detail</a>
+                            </div>
+                            <div class="col">
+                                <!-- Saved Recipe Modal Button -->
+                                 <button type="button" class="btn btn-outline-danger profile-button-danger" data-bs-toggle="modal" data-bs-target="#savedRecipeModal<?= $i ?>">
+                                    Hapus
+                                </button>
+                                <!-- Start of Saved Recipe Modal -->
+                                <div class="modal fade" id="savedRecipeModal<?= $i ?>" tabindex="-1" aria-labelledby="savedRecipeModalLabel<?= $i ?>" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <p class="modal-title" id="savedRecipeModalLabel<?= $i ?>">Resep Yang Disimpan</p>
+                                                <button type="button" class="btn-close alert-button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Ingin Menghapus <?= $saved_recipe_details[$i]['recipe_title'] ?>?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <form action="<?= base_url(); ?>UserController/post_remove_saved_recipe" method="POST">
+                                                    <input type="hidden" name="saved-recipe" id="saved-recipe" value="<?= $saved_recipe_details[$i]['recipe_title'] ?>">
+                                                    <button type="submit" class="btn btn-outline-danger profile-button-danger"">Iya</button>
+                                                </form>
+                                                <button type="button" class="btn btn-outline-dark profile-button" data-bs-dismiss="modal">Tidak</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col">
-                                    <form action="<?= base_url(); ?>User_Controller/post_remove_saved_recipe" method="POST">
-                                        <input type="hidden" name="saved-recipe" id="saved-recipe" value="<?= $saved_recipe_details[$i]['recipe_title'] ?>">
-                                        <button type="submit" class="btn btn-outline-danger profile-button-danger"">Hapus</button>
-                                    </form>
-                                </div>
+                                <!-- End of Saved Recipe Modal -->
                             </div>
                         </div>
                     </div>
@@ -81,26 +103,48 @@
     <!-- End of Saved Recipe -->
 
     <!-- Start of Made Recipe -->
-    <div class="row">
+    <div class="row m-0">
         <p class="fs-3 fw-bold mt-5" id="profile-buat">Resep Yang Pernah Dibuat</p>
         <hr>
-        <div class="row m-0 mt-3 gx-5 justify-content-center">
+        <div class="row m-0 gy-5 px-0 justify-content-center">
             <?php for($i = 0; $i < count($made_recipe_details); $i++): ?>
-                <div class="col-lg-4 mb-3 text-center">
-                    <div class="card border-dark profile-card">
-                        <img src="<?= $made_recipe_details[$i]['thumb'] ?>" alt="<?= $made_recipe_details[$i]['recipe_title'] ?>" class="card-img-top">
-                        <div class="card-body">
-                            <p class="card-title fw-bold text-start profile-card-tulisan"><?= $made_recipe_details[$i]['recipe_title'] ?></p>
-                            <div class="row">
-                                <div class="col">
-                                    <a href="<?= base_url(); ?>recipe/detail/<?= $made_recipe_details[$i]['recipe_key'] ?>" class="btn btn-outline-dark me-2 profile-button">Detail</a>
+                <div class="col-lg-4 mx-5 p-0 card border-dark text-center profile-card">
+                    <img src="<?= $made_recipe_details[$i]['thumb'] ?>" alt="<?= $made_recipe_details[$i]['recipe_title'] ?>" class="card-img-top" height="150">
+                    <div class="card-body">
+                        <div class="row h-50">
+                            <p class="card-title fw-bold text-start profile-card-tulisan h-25"><?= $made_recipe_details[$i]['recipe_title'] ?></p>
+                        </div>
+                        <div class="row h-50 align-items-end">
+                            <div class="col">
+                                <a href="<?= base_url(); ?>recipe/detail/<?= $made_recipe_details[$i]['recipe_key'] ?>" class="btn btn-outline-dark me-2 profile-button">Detail</a>
+                            </div>
+                            <div class="col">
+                                <!-- Made Recipe Modal Button -->
+                                 <button type="button" class="btn btn-outline-danger profile-button-danger" data-bs-toggle="modal" data-bs-target="#madeRecipeModal<?= $i ?>">
+                                    Hapus
+                                </button>
+                                <!-- Start of Made Recipe Modal -->
+                                <div class="modal fade" id="madeRecipeModal<?= $i ?>" tabindex="-1" aria-labelledby="madeRecipeModalLabel<?= $i ?>" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <p class="modal-title" id="madeRecipeModalLabel<?= $i ?>">Resep Yang Pernah Dibuat</p>
+                                                <button type="button" class="btn-close alert-button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Ingin Menghapus <?= $made_recipe_details[$i]['recipe_title'] ?>?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <form action="<?= base_url(); ?>UserController/post_remove_made_recipe" method="POST">
+                                                    <input type="hidden" name="made-recipe" id="made-recipe" value="<?= $made_recipe_details[$i]['recipe_title'] ?>">
+                                                    <button type="submit" class="btn btn-outline-danger profile-button-danger"">Iya</button>
+                                                </form>
+                                                <button type="button" class="btn btn-outline-dark profile-button" data-bs-dismiss="modal">Tidak</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col">
-                                    <form action="<?= base_url(); ?>User_Controller/post_remove_made_recipe" method="POST">
-                                        <input type="hidden" name="made-recipe" id="made-recipe" value="<?= $made_recipe_details[$i]['recipe_title'] ?>">
-                                        <button type="submit" class="btn btn-outline-danger profile-button-danger"">Hapus</button>
-                                    </form>
-                                </div>
+                                <!-- End of Made Recipe Modal -->
                             </div>
                         </div>
                     </div>
@@ -111,26 +155,48 @@
     <!-- End of Made Recipe -->
 
     <!-- Start of Mastered Recipe -->
-    <div class="row">
-        <p class="fs-3 fw-bold mt-5" id="profile-kuasa">Resep Yang Telah Dikuasai</p>
+    <div class="row m-0">
+        <p class="fs-3 fw-bold mt-5" id="profile-buat">Resep Yang Telah Dikuasai</p>
         <hr>
-        <div class="row m-0 mt-3 gx-5 justify-content-center">
+        <div class="row m-0 gy-5 px-0 justify-content-center">
             <?php for($i = 0; $i < count($mastered_recipe_details); $i++): ?>
-                <div class="col-lg-4 mb-3 text-center">
-                    <div class="card border-dark profile-card">
-                        <img src="<?= $mastered_recipe_details[$i]['thumb'] ?>" alt="<?= $mastered_recipe_details[$i]['recipe_title'] ?>" class="card-img-top">
-                        <div class="card-body">
-                            <p class="card-title fw-bold text-start profile-card-tulisan"><?= $mastered_recipe_details[$i]['recipe_title'] ?></p>
-                            <div class="row">
-                                <div class="col">
-                                    <a href="<?= base_url(); ?>recipe/detail/<?= $mastered_recipe_details[$i]['recipe_key'] ?>" class="btn btn-outline-dark me-2 profile-button">Detail</a>
+                <div class="col-lg-4 mx-5 p-0 card border-dark text-center profile-card">
+                    <img src="<?= $mastered_recipe_details[$i]['thumb'] ?>" alt="<?= $mastered_recipe_details[$i]['recipe_title'] ?>" class="card-img-top" height="150">
+                    <div class="card-body">
+                        <div class="row h-50">
+                            <p class="card-title fw-bold text-start profile-card-tulisan h-25"><?= $mastered_recipe_details[$i]['recipe_title'] ?></p>
+                        </div>
+                        <div class="row h-50 align-items-end">
+                            <div class="col">
+                                <a href="<?= base_url(); ?>recipe/detail/<?= $mastered_recipe_details[$i]['recipe_key'] ?>" class="btn btn-outline-dark me-2 profile-button">Detail</a>
+                            </div>
+                            <div class="col">
+                                <!-- Mastered Recipe Modal Button -->
+                                 <button type="button" class="btn btn-outline-danger profile-button-danger" data-bs-toggle="modal" data-bs-target="#masteredRecipeModal<?= $i ?>">
+                                    Hapus
+                                </button>
+                                <!-- Start of Mastered Recipe Modal -->
+                                <div class="modal fade" id="masteredRecipeModal<?= $i ?>" tabindex="-1" aria-labelledby="masteredRecipeModalLabel<?= $i ?>" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <p class="modal-title" id="masteredRecipeModalLabel<?= $i ?>">Resep Yang Telah Dikuasai</p>
+                                                <button type="button" class="btn-close alert-button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Ingin Menghapus <?= $mastered_recipe_details[$i]['recipe_title'] ?>?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <form action="<?= base_url(); ?>UserController/post_remove_mastered_recipe" method="POST">
+                                                    <input type="hidden" name="mastered-recipe" id="mastered-recipe" value="<?= $mastered_recipe_details[$i]['recipe_title'] ?>">
+                                                    <button type="submit" class="btn btn-outline-danger profile-button-danger"">Iya</button>
+                                                </form>
+                                                <button type="button" class="btn btn-outline-dark profile-button" data-bs-dismiss="modal">Tidak</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col">
-                                    <form action="<?= base_url(); ?>User_Controller/post_remove_mastered_recipe" method="POST">
-                                        <input type="hidden" name="mastered-recipe" id="mastered-recipe" value="<?= $mastered_recipe_details[$i]['recipe_title'] ?>">
-                                        <button type="submit" class="btn btn-outline-danger profile-button-danger"">Hapus</button>
-                                    </form>
-                                </div>
+                                <!-- End of Mastered Recipe Modal -->
                             </div>
                         </div>
                     </div>

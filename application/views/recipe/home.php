@@ -95,7 +95,7 @@
                                         <?php if(!$this->session->username): ?>
                                             <a href="<?= base_url(); ?>login" class="btn btn-outline-dark mb-1 home-today-button">Simpan</a>
                                         <?php else: ?>
-                                            <form action="<?= base_url(); ?>Recipe_Controller/post_saved_recipe" method="POST">
+                                            <form action="<?= base_url(); ?>RecipeController/post_saved_recipe" method="POST">
                                                 <input type="hidden" name="saved-page" id="saved-page" value="home">
                                                 <input type="hidden" name="saved-username" id="saved-username" value="<?= $this->session->username; ?>">
                                                 <input type="hidden" name="saved-key" id="saved-key" value="<?= $today_recipe->key; ?>">
@@ -113,7 +113,7 @@
                                         <?php if(!$this->session->username): ?>
                                             <a href="<?= base_url(); ?>login" class="btn btn-outline-dark mb-1 home-today-button">Pernah Membuat</a>
                                         <?php else: ?>
-                                            <form action="<?= base_url(); ?>Recipe_Controller/post_made_recipe" method="POST">
+                                            <form action="<?= base_url(); ?>RecipeController/post_made_recipe" method="POST">
                                                 <input type="hidden" name="made-page" id="made-page" value="home">
                                                 <input type="hidden" name="made-username" id="made-username" value="<?= $this->session->username; ?>">
                                                 <input type="hidden" name="made-key" id="made-key" value="<?= $today_recipe->key; ?>">
@@ -131,7 +131,7 @@
                                         <?php if(!$this->session->username): ?>
                                             <a href="<?= base_url(); ?>login" class="btn btn-outline-dark mb-1 home-today-button">Telah Menguasai</a>
                                         <?php else: ?>
-                                            <form action="<?= base_url(); ?>Recipe_Controller/post_mastered_recipe" method="POST">
+                                            <form action="<?= base_url(); ?>RecipeController/post_mastered_recipe" method="POST">
                                                 <input type="hidden" name="mastered-page" id="mastered-page" value="home">
                                                 <input type="hidden" name="mastered-username" id="mastered-username" value="<?= $this->session->username; ?>">
                                                 <input type="hidden" name="mastered-key" id="mastered-key" value="<?= $today_recipe->key; ?>">
