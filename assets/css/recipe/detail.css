@@ -1,6 +1,5 @@
 .detail-kotak {
     z-index: 0;
-    /* border: 1px solid black; */
     padding: 50px 20px 50px 20px;
 }
 
@@ -9,20 +8,16 @@
     font-size: 20pt;
 }
 
-.detail-row-1 {
-    padding-top: 5px;
-}
-
 .detail-gambar {
     padding: 10px;
     border: 1px double black;
-    width: 300px;
+    width: 80%;
 }
 
 .detail-table-button {
     border: 1px solid black;
     color: #181616;
-    /* background-color: white; */
+    background-color: white;
 }
 
 .detail-table-button:focus {
@@ -35,7 +30,6 @@
 }
 
 .detail-detail {
-    /* border: 1px solid black; */
     padding-top: 80px;
     height: 200px;
 }

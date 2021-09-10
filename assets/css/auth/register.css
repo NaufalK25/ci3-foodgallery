@@ -9,19 +9,12 @@
     border: 1px solid black !important;
     padding: 20px;
     border-radius: 5px;
-    /* background-color: #d0ffb7; */
     background-color: #9b9b9b;
 }
 
 .register-input {
-    /* border-radius: 0 !important; */
     border: 1px solid black !important;
-    /* background-color: #f2f5de; */
 }
-
-/* .register-input:focus {
-    background-color: #f2f5de;
-} */
 
 .register-input:focus, .register-button:focus {
     box-shadow: none !important;

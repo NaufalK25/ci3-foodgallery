@@ -19,13 +19,13 @@
              
 <div class="detail-kotak">
     <p class="detail-judul"><?= $recipe_detail->title; ?></p>
-    <div class="row m-0 detail-row-1">
-        <div class="col">
+    <div class="row m-0 pt-3">
+        <div class="col-lg-6">
             <div class="mb-3 text-center">
                 <img src="<?= $recipe_detail->thumb; ?>" class="detail-gambar" alt="<?= $recipe_detail->title; ?>">
             </div>
         </div>
-        <div class="col">
+        <div class="col-lg-6">
             <table class="table table-hover">
                 <thead>
                     <tr class=text-center>

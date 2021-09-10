@@ -51,6 +51,7 @@
 <!-- Start of Today Recipe -->
 <div class="home-today">
     <div class="row justify-content-center gx-5">
+        <!-- Start of Today Recipe Detail -->
         <div class="col-lg-5 me-lg-5 mb-3">
             <h1 class="fs-4">Resep Hari Ini</h1>
             <hr>
@@ -75,7 +76,9 @@
                 Lihat Detail Resep dan Cara Memasak Disini
             </a>
         </div>
-        <!-- <div class="col-lg-2"></div> -->
+        <!-- End of Today Recipe Detail -->
+
+        <!-- Start of Today Recipe Card -->
         <div class="col-lg-5 ms-lg-5">
             <div class="card border-dark">
                 <img src="<?= $today_recipe->thumb ?>" class="card-img-top" alt="<?= $today_recipe->title; ?>">
@@ -153,6 +156,7 @@
                 </div>
             </div>
         </div>
+        <!-- End of Today Recipe Card -->
     </div>
 </div>
 <!-- End of Today Recipe -->

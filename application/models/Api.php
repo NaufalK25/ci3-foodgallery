@@ -6,6 +6,7 @@
         {
             $json_data = @file_get_contents($url);
 
+            // return false if $json_data is null
             if(!$json_data)
             {
                 return false;
@@ -21,14 +22,17 @@
             $new_recipe_key = ltrim($new_recipe_key, '-');
             $new_recipe_key = rtrim($new_recipe_key, '-');
             
+            // cast $new_recipe_key from string to array with delimiter '-'
             $new_recipe_key_arr = explode('-', $new_recipe_key);
 
+            // Upper case all string
             $temp = [];
             for($i = 0; $i < count($new_recipe_key_arr); $i++)
             {
                 array_push($temp, ucfirst($new_recipe_key_arr[$i]));
             }
-    
+            
+            // cast $temp from array to string with delimiter ' '
             $new_recipe_key = implode(' ', $temp);
 
             return $new_recipe_key;
@@ -46,6 +50,7 @@
 
             // return $recipe[$random_number];
 
+            // get first two recipes from api
             $idx = 0;
             $recipe[$idx]->new_title = $this->get_recipe_name($recipe[$idx]->key);
 
@@ -58,6 +63,7 @@
 
             $recipe_detail = $this->connect_api($url);
 
+            // return false if $recipe_detail is null
             if(!$recipe_detail)
             {
                 return false;
@@ -65,6 +71,7 @@
 
             $recipe_detail->new_title = $this->get_recipe_name($recipe_key);
 
+            // change thumb to image-not-found.png if $recipe_detail->thumb is null
             if(!(
                 empty($recipe_detail->needItem) && 
                 empty($recipe_detail->ingredient) &&

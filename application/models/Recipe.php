@@ -7,21 +7,15 @@
             return $this->db->insert($table, $saved_recipe);
         }
 
-        public function is_recipe_exist($table, $username, $recipe_title)
+        public function is_recipe_exists($table, $username, $recipe_title)
         {
             $recipe = $this->db->get_where($table, [
                 'username' => $username,
                 'recipe_title' => $recipe_title
             ])->result_array();
-
-            if(count($recipe) > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            
+            // return true if data with username = $username and recipe_title = $recipe_title exists
+            return count($recipe) > 0;
         }
 
         public function count_rows($table, $recipe_title)

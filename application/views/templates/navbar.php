@@ -17,16 +17,16 @@
                     <li class="nav-item">
                         <a class="nav-link navbar-menu <?= $url == base_url() . 'home'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>home">Home</a>
                     </li>
+                    <!-- Before Login -->
                     <?php if(!$this->session->username): ?>
-                        <!-- Before Login -->
                         <li class="nav-item">
                             <a class="nav-link navbar-menu <?= $url == base_url() . 'register'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>register">Register</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link navbar-menu <?= $url == base_url() . 'login'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>login">Login</a>
                         </li>
+                    <!-- After Login -->
                     <?php else: ?>
-                        <!-- After Login -->
                         <li class="nav-item">
                             <a class="nav-link navbar-menu <?= $url == base_url() . 'recipe/page/1'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>recipe/page/1">Daftar Resep</a>
                         </li>

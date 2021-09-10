@@ -6,10 +6,8 @@
 
 .login-kotak {
     width: 500px;
-    /* border: 1px solid black !important; */
     padding: 20px;
     border-radius: 5px;
-    /* background-color: #d0ffb7; */
     background-color: #9b9b9b;
 }
 
@@ -19,12 +17,7 @@
 
 .login-input {
     border: 1px solid black !important;
-    /* background-color: #f2f5de; */
 }
-
-/* .login-input:focus {
-    background-color: #f2f5de;
-} */
 
 .login-input:focus, .login-button:focus {
     box-shadow: none !important;

@@ -4,9 +4,7 @@ body {
 }
 
 .navbar-luar {
-    /* background-color: #d0ffb7; */
     background-color: #9b9b9b;
-    /* border-bottom: 1px solid #181616; */
 }
 
 .navbar-merek {
@@ -24,14 +22,11 @@ body {
 }
 
 .navbar-menu:hover {
-    /* font-weight: 500; */
     text-decoration: underline;
-    /* color: #181616 !important; */
 }
 
 .navbar-menu-aktif {
     font-weight: 700;
-    /* color: #181616 !important; */
 }
 
 .alert-button:focus {

@@ -120,9 +120,9 @@
                 'recipe_title' => $recipe_title
             ];
 
-            $is_recipe_exist = $this->Recipe->is_recipe_exist($table, $username, $recipe_title);
+            $is_recipe_exists = $this->Recipe->is_recipe_exists($table, $username, $recipe_title);
 
-            if($is_recipe_exist)
+            if($is_recipe_exists)
             {
                 $message = 'Resep Gagal Ditambahkan Karena Sudah Ada Di Daftar Resep Yang Disimpan';
                 $type = 'danger';
@@ -165,9 +165,9 @@
                 'recipe_title' => $recipe_title
             ];
 
-            $is_recipe_exist = $this->Recipe->is_recipe_exist($table, $username, $recipe_title);
+            $is_recipe_exists = $this->Recipe->is_recipe_exists($table, $username, $recipe_title);
 
-            if($is_recipe_exist)
+            if($is_recipe_exists)
             {
                 $message = 'Resep Gagal Ditambahkan Karena Sudah Ada Di Daftar Resep Yang Pernah Dibuat';
                 $type = 'danger';
@@ -210,9 +210,9 @@
                 'recipe_title' => $recipe_title
             ];
 
-            $is_recipe_exist = $this->Recipe->is_recipe_exist($table, $username, $recipe_title);
+            $is_recipe_exists = $this->Recipe->is_recipe_exists($table, $username, $recipe_title);
 
-            if($is_recipe_exist)
+            if($is_recipe_exists)
             {
                 $message = 'Resep Gagal Ditambahkan Karena Sudah Ada Di Daftar Resep Yang Telah Dikuasai';
                 $type = 'danger';
