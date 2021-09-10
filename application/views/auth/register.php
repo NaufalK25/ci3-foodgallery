@@ -2,7 +2,7 @@
     defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<link rel="stylesheet" href="<?= base_url(); ?>assets/css/register.css">
+<link rel="stylesheet" href="<?= base_url(); ?>assets/css/auth/register.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/css/templates/navbar.css">
 </head>
 <body>

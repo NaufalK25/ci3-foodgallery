@@ -28,7 +28,7 @@
             ];
 
             $this->load->view('templates/header', $data);
-            $this->load->view('home');
+            $this->load->view('recipe/home');
             $this->load->view('templates/footer');
             $this->load->view('templates/script-footer');
         }
@@ -41,18 +41,18 @@
             }
             else
             {
-                $page = $this->uri->segment(2, 0);
+                $page = $this->uri->segment(3, 0);
 
                 $recipe_per_page = $this->Api->get_recipe_per_page($page);
 
                 $data = [
                     'page_title' => 'Recipe List | FoodGallery',
-                    'url' => base_url() . 'recipe-list',
+                    'url' => base_url() . 'recipe/page/1',
                     'recipe_per_page' => $recipe_per_page
                 ];
     
                 $this->load->view('templates/header', $data);
-                $this->load->view('recipe');
+                $this->load->view('recipe/page');
                 $this->load->view('templates/footer');
                 $this->load->view('templates/script-footer');
             }
@@ -66,7 +66,7 @@
             }
             else
             {
-                $key = $this->uri->segment(2, 0);
+                $key = $this->uri->segment(3, 0);
     
                 $recipe_detail = $this->Api->get_recipe_detail($key);
     
@@ -99,7 +99,7 @@
                     ];
     
                     $this->load->view('templates/header', $data);
-                    $this->load->view('detail');
+                    $this->load->view('recipe/detail');
                     $this->load->view('templates/footer');
                     $this->load->view('templates/script-footer');
                 }

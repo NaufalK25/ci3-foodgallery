@@ -2,7 +2,7 @@
     defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<link rel="stylesheet" href="<?= base_url(); ?>assets/css/profile.css">
+<link rel="stylesheet" href="<?= base_url(); ?>assets/css/user/profile.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/css/templates/navbar.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/css/templates/footer.css">
 </head>
@@ -63,7 +63,7 @@
                             <p class="card-title fw-bold text-start profile-card-tulisan"><?= $saved_recipe_details[$i]['recipe_title'] ?></p>
                             <div class="row">
                                 <div class="col">
-                                    <a href="<?= base_url(); ?>recipe/<?= $saved_recipe_details[$i]['recipe_key'] ?>" class="btn btn-outline-dark me-2 profile-button">Detail</a>
+                                    <a href="<?= base_url(); ?>recipe/detail/<?= $saved_recipe_details[$i]['recipe_key'] ?>" class="btn btn-outline-dark me-2 profile-button">Detail</a>
                                 </div>
                                 <div class="col">
                                     <form action="<?= base_url(); ?>User_Controller/post_remove_saved_recipe" method="POST">
@@ -93,7 +93,7 @@
                             <p class="card-title fw-bold text-start profile-card-tulisan"><?= $made_recipe_details[$i]['recipe_title'] ?></p>
                             <div class="row">
                                 <div class="col">
-                                    <a href="<?= base_url(); ?>recipe/<?= $made_recipe_details[$i]['recipe_key'] ?>" class="btn btn-outline-dark me-2 profile-button">Detail</a>
+                                    <a href="<?= base_url(); ?>recipe/detail/<?= $made_recipe_details[$i]['recipe_key'] ?>" class="btn btn-outline-dark me-2 profile-button">Detail</a>
                                 </div>
                                 <div class="col">
                                     <form action="<?= base_url(); ?>User_Controller/post_remove_made_recipe" method="POST">
@@ -123,7 +123,7 @@
                             <p class="card-title fw-bold text-start profile-card-tulisan"><?= $mastered_recipe_details[$i]['recipe_title'] ?></p>
                             <div class="row">
                                 <div class="col">
-                                    <a href="<?= base_url(); ?>recipe/<?= $mastered_recipe_details[$i]['recipe_key'] ?>" class="btn btn-outline-dark me-2 profile-button">Detail</a>
+                                    <a href="<?= base_url(); ?>recipe/detail/<?= $mastered_recipe_details[$i]['recipe_key'] ?>" class="btn btn-outline-dark me-2 profile-button">Detail</a>
                                 </div>
                                 <div class="col">
                                     <form action="<?= base_url(); ?>User_Controller/post_remove_mastered_recipe" method="POST">

@@ -53,13 +53,15 @@ $route['default_controller'] = 'Recipe_Controller';
 $route['404_override'] = 'Error_Controller/error_404';
 $route['translate_uri_dashes'] = FALSE;
 
-// recipe_controller
-$route['home'] = 'Recipe_Controller';
-$route['recipe-list/:num'] = 'Recipe_Controller/get_recipe_list';
-$route['recipe/:any'] = 'Recipe_Controller/get_recipe_detail';
+// Auth_Controller
+$route['login'] = 'Auth_Controller';
+$route['register'] = 'Auth_Controller/register';
+$route['logout'] = 'Auth_Controller/logout';
 
-// user_controller
-$route['login'] = 'User_Controller';
-$route['register'] = 'User_Controller/register';
-$route['logout'] = 'User_Controller/logout';
-$route['profile'] = 'User_Controller/get_user_profile';
+// User_Controller
+$route['profile'] = 'User_Controller';
+
+// Recipe_Controller
+$route['(recipe/home|home)'] = 'Recipe_Controller';
+$route['recipe/page/:num'] = 'Recipe_Controller/get_recipe_list';
+$route['recipe/detail/:any'] = 'Recipe_Controller/get_recipe_detail';

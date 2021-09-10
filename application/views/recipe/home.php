@@ -2,7 +2,7 @@
     defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<link rel="stylesheet" href="<?= base_url(); ?>assets/css/home.css">
+<link rel="stylesheet" href="<?= base_url(); ?>assets/css/recipe/home.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/css/templates/navbar.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/css/templates/footer.css">
 </head>
@@ -40,7 +40,7 @@
         <?php if(!$this->session->username): ?>
             <a href="<?= base_url()?>login" class="btn btn-outline-dark home-jumbotron-button">
         <?php else: ?>
-            <a href="<?= base_url(); ?>recipe-list/1" class="btn btn-outline-dark home-jumbotron-button">
+            <a href="<?= base_url(); ?>recipe/page/1" class="btn btn-outline-dark home-jumbotron-button">
         <?php endif; ?>
             <i class="fas fa-list-ul"></i> Daftar Resep
         </a>
@@ -70,7 +70,7 @@
             <?php if(!$this->session->username): ?>
                 <a href="<?= base_url(); ?>login" class="home-today-link">
             <?php else: ?>
-                <a href="<?= base_url(); ?>recipe/<?= $today_recipe->key; ?>" class="home-today-link">
+                <a href="<?= base_url(); ?>recipe/detail/<?= $today_recipe->key; ?>" class="home-today-link">
             <?php endif; ?>
                 Lihat Detail Resep dan Cara Memasak Disini
             </a>
@@ -145,7 +145,7 @@
                         <?php if(!$this->session->username): ?>
                             <a href="<?= base_url(); ?>login" class="btn btn-outline-dark home-today-button">
                         <?php else: ?>
-                            <a href="<?= base_url(); ?>recipe/<?= $today_recipe->key; ?>#detail-cara" class="btn btn-outline-dark home-today-button">
+                            <a href="<?= base_url(); ?>recipe/detail/<?= $today_recipe->key; ?>#detail-cara" class="btn btn-outline-dark home-today-button">
                         <?php endif; ?>
                             <i class="fas fa-utensils"></i> Cara Masak
                         </a>
