@@ -40,9 +40,9 @@
                         <td class="align-middle">Disimpan</td>
                         <td>
                             <form action="<?= base_url(); ?>Recipe_Controller/post_saved_recipe" method="POST">
-                                <input type="hidden" name="saved-page" id="saved-page" value="recipe/<?= $this->uri->segment(2, 0) ?>">
+                                <input type="hidden" name="saved-page" id="saved-page" value="recipe/detail/<?= $this->uri->segment(3, 0) ?>">
                                 <input type="hidden" name="saved-username" id="saved-username" value="<?= $this->session->username; ?>">
-                                <input type="hidden" name="saved-key" id="saved-key" value="<?= $this->uri->segment(2, 0); ?>">
+                                <input type="hidden" name="saved-key" id="saved-key" value="<?= $this->uri->segment(3, 0); ?>">
                                 <input type="hidden" name="saved-title" id="saved-title" value="<?= $recipe_detail->title; ?>">
                                 <button type="submit" class="btn btn-outline-dark detail-table-button">Simpan</button>
                             </form>
@@ -53,9 +53,9 @@
                         <td class="align-middle">Dibuat</td>
                         <td>
                             <form action="<?= base_url(); ?>Recipe_Controller/post_made_recipe" method="POST">
-                                <input type="hidden" name="made-page" id="made-page" value="recipe/<?= $this->uri->segment(2, 0) ?>">
+                                <input type="hidden" name="made-page" id="made-page" value="recipe/detail/<?= $this->uri->segment(3, 0) ?>">
                                 <input type="hidden" name="made-username" id="made-username" value="<?= $this->session->username; ?>">
-                                <input type="hidden" name="made-key" id="made-key" value="<?= $this->uri->segment(2, 0); ?>">
+                                <input type="hidden" name="made-key" id="made-key" value="<?= $this->uri->segment(3, 0); ?>">
                                 <input type="hidden" name="made-title" id="made-title" value="<?= $recipe_detail->title; ?>">
                                 <button type="submit" class="btn btn-outline-dark detail-table-button">Pernah Membuat</button>
                             </form>
@@ -66,9 +66,9 @@
                         <td class="align-middle">Dikuasai</td>
                         <td>
                             <form action="<?= base_url(); ?>Recipe_Controller/post_mastered_recipe" method="POST">
-                                <input type="hidden" name="mastered-page" id="mastered-page" value="recipe/<?= $this->uri->segment(2, 0) ?>">
+                                <input type="hidden" name="mastered-page" id="mastered-page" value="recipe/detail/<?= $this->uri->segment(3, 0) ?>">
                                 <input type="hidden" name="mastered-username" id="mastered-username" value="<?= $this->session->username; ?>">
-                                <input type="hidden" name="mastered-key" id="mastered-key" value="<?= $this->uri->segment(2, 0); ?>">
+                                <input type="hidden" name="mastered-key" id="mastered-key" value="<?= $this->uri->segment(3, 0); ?>">
                                 <input type="hidden" name="mastered-title" id="mastered-title" value="<?= $recipe_detail->title; ?>">
                                 <button type="submit" class="btn btn-outline-dark detail-table-button">Telah Menguasai</button>
                             </form>

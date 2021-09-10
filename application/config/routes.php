@@ -62,6 +62,6 @@ $route['logout'] = 'Auth_Controller/logout';
 $route['profile'] = 'User_Controller';
 
 // Recipe_Controller
-$route['(recipe/home|home)'] = 'Recipe_Controller';
+$route['(recipe/home|recipe|home)'] = 'Recipe_Controller';
 $route['recipe/page/:num'] = 'Recipe_Controller/get_recipe_list';
 $route['recipe/detail/:any'] = 'Recipe_Controller/get_recipe_detail';
