@@ -9,11 +9,7 @@
     border: 1px solid black !important;
     padding: 20px;
     border-radius: 5px;
-    background-color: #9b9b9b;
-}
-
-.register-input {
-    border: 1px solid black !important;
+    background-color: #d2d5d8;
 }
 
 .register-input:focus, .register-button:focus {
@@ -21,19 +17,17 @@
 }
 
 .register-error {
-    color: red;
+    color: #181616;
     font-weight: 700;
     font-size: 8pt;
 }
 
 .register-button {
     background-color: white;
-    color: #181616;
 }
 
 .register-link {
     color: #181616;
-
     text-decoration: none;
 }
 

@@ -7,16 +7,13 @@
 .login-kotak {
     width: 500px;
     padding: 20px;
+	border: 1px solid black;
     border-radius: 5px;
-    background-color: #9b9b9b;
+    background-color: #d2d5d8;
 }
 
 .login-alert {
     font-size: 10pt;
-}
-
-.login-input {
-    border: 1px solid black !important;
 }
 
 .login-input:focus, .login-button:focus {
@@ -24,14 +21,13 @@
 }
 
 .login-error {
-    color: red;
+    color: #181616;
     font-weight: 700;
     font-size: 8pt;
 }
 
 .login-button {
-    background-color: white;
-    color: #181616;
+	background-color: white;
 }
 
 .login-link {

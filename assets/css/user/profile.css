@@ -4,25 +4,25 @@
 }
 
 .profile-image {
-    border-radius: 50%;
     width: 300px;
-    height: 300px;
+    height: 350px;
 }
 
 .profile-button {
-    background-color: white;
+	background-color: white;
 }
 
-.profile-button, .profile-button-danger {
-    color: #181616;
-}
-
-.profile-button:focus, .profile-button-danger:focus {
+.profile-button:focus, .profile-input:focus {
     box-shadow: none !important;
 }
 
-.profile-saved-image, .profile-made-image, .profile-mastered-image {
-    width: 80%;
+.profile-card {
+    width: 15.5rem;
+	background-color: #f6f6f7;
+}
+
+.profile-card-tulisan {
+    font-size: 10pt;
 }
 
 .profile-link {
@@ -35,10 +35,8 @@
     text-decoration: underline;
 }
 
-.profile-card {
-    width: 15.5rem;
-}
-
-.profile-card-tulisan {
-    font-size: 10pt;
+.profile-error {
+	color: #181616;
+    font-weight: 700;
+    font-size: 8pt;
 }

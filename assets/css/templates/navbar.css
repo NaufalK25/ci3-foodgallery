@@ -1,10 +1,10 @@
 body {
-    /* background-color: #93ff96; */
+	background-color: #f6f6f7;
     font-family: 'Quicksand', sans-serif, "FontAwesome" !important;
 }
 
-.navbar-luar {
-    background-color: #9b9b9b;
+.navbar-bg {
+	background-color: #989ea4;
 }
 
 .navbar-merek {

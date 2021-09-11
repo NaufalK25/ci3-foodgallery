@@ -42,8 +42,6 @@
 }
 
 .home-jumbotron-button, .home-today-button {
-    border: 1px solid black;
-    color: #181616;
     background-color: white;
 }
 
@@ -53,6 +51,10 @@
 
 .home-today {
     padding: 30px;
+}
+
+.home-today-bg {
+	background-color: #d2d5d8;
 }
 
 .home-today-desc {

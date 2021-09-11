@@ -15,8 +15,6 @@
 }
 
 .detail-table-button {
-    border: 1px solid black;
-    color: #181616;
     background-color: white;
 }
 
@@ -29,14 +27,9 @@
     font-size: 8pt;
 }
 
-.detail-detail {
-    padding-top: 80px;
-    height: 200px;
-}
-
 .detail-desc-title {
     top: -19px;
-    background-color:white;
+    background-color:#f6f6f7;
 }
 
 .detail-bahan {

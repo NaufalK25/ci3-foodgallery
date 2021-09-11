@@ -12,10 +12,7 @@
     $this->load->view('templates/navbar');
 ?>
 
-<?= $this->session->flashdata('already_saved'); ?>
-<?= $this->session->flashdata('already_made'); ?>
-<?= $this->session->flashdata('already_mastered'); ?>
-
+<?= $this->session->flashdata('alert'); ?>
              
 <div class="detail-kotak">
     <p class="detail-judul"><?= $recipe_detail->title; ?></p>
@@ -44,7 +41,7 @@
                                 <input type="hidden" name="saved-username" id="saved-username" value="<?= $this->session->username; ?>">
                                 <input type="hidden" name="saved-key" id="saved-key" value="<?= $this->uri->segment(3, 0); ?>">
                                 <input type="hidden" name="saved-title" id="saved-title" value="<?= $recipe_detail->title; ?>">
-                                <button type="submit" class="btn btn-outline-dark detail-table-button">Simpan</button>
+                                <button type="submit" class="btn btn-outline-primary detail-table-button">Simpan</button>
                             </form>
                         </td>
                     </tr>
@@ -57,7 +54,7 @@
                                 <input type="hidden" name="made-username" id="made-username" value="<?= $this->session->username; ?>">
                                 <input type="hidden" name="made-key" id="made-key" value="<?= $this->uri->segment(3, 0); ?>">
                                 <input type="hidden" name="made-title" id="made-title" value="<?= $recipe_detail->title; ?>">
-                                <button type="submit" class="btn btn-outline-dark detail-table-button">Pernah Membuat</button>
+                                <button type="submit" class="btn btn-outline-primary detail-table-button">Pernah Membuat</button>
                             </form>
                         </td>
                     </tr>
@@ -70,7 +67,7 @@
                                 <input type="hidden" name="mastered-username" id="mastered-username" value="<?= $this->session->username; ?>">
                                 <input type="hidden" name="mastered-key" id="mastered-key" value="<?= $this->uri->segment(3, 0); ?>">
                                 <input type="hidden" name="mastered-title" id="mastered-title" value="<?= $recipe_detail->title; ?>">
-                                <button type="submit" class="btn btn-outline-dark detail-table-button">Telah Menguasai</button>
+                                <button type="submit" class="btn btn-outline-primary detail-table-button">Telah Menguasai</button>
                             </form>
                         </td>
                     </tr>
@@ -85,7 +82,7 @@
         </div>
     </div>
 
-    <div class="row m-0 justify-content-center detail-detail">
+    <div class="row m-0 my-5 justify-content-center">
         <div class="col">
             <p class="text-center fs-5 border-end border-dark">
                 <i class="fas fa-arrow-up"></i> <?= $recipe_detail->dificulty; ?>

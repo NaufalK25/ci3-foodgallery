@@ -37,7 +37,7 @@
         {
             if(!$this->session->username)
             {
-                redirect('error');
+                redirect();
             }
             else
             {
@@ -62,7 +62,7 @@
         {
             if(!$this->session->username)
             {
-                redirect('error');
+                redirect();
             }
             else
             {
@@ -81,7 +81,7 @@
                     )
                 )
                 {
-                    redirect('error');
+                    redirect();
                 }
                 else
                 {
@@ -138,7 +138,7 @@
             }
 
             $this->session->set_flashdata(
-                'already_saved',
+                'alert',
                 '<div class="alert alert-' . $type . ' alert-dismissible d-flex align-items-center fade show text-start alert-recipe" role="alert">
                     ' . $svg . '
                     <div class="login-alert">
@@ -183,7 +183,7 @@
             }
 
             $this->session->set_flashdata(
-                'already_made',
+                'alert',
                 '<div class="alert alert-' . $type . ' alert-dismissible d-flex align-items-center fade show text-start alert-recipe" role="alert">
                     ' . $svg . '
                     <div class="login-alert">
@@ -228,7 +228,7 @@
             }
 
             $this->session->set_flashdata(
-                'already_mastered',
+                'alert',
                 '<div class="alert alert-' . $type . ' alert-dismissible d-flex align-items-center fade show text-start alert-recipe" role="alert">
                     ' . $svg . '
                     <div class="login-alert">

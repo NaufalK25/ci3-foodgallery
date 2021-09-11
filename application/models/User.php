@@ -11,5 +11,17 @@
         {
             return $this->db->get_where('user', ['username' => $username])->row_array();
         }
+
+		public function update_user_profile($username, $fullname)
+		{
+			$this->db->set('fullname', $fullname);
+			$this->db->where('username', $username);
+			$this->db->update('user');
+		}
+
+		public function update_profile_image($profile_image)
+		{
+			$this->db->set('image', $profile_image);
+		}
     }
 ?>

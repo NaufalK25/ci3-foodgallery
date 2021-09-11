@@ -12,15 +12,15 @@
         {   
             if(!$this->session->username)
             {
-                // username
-                $this->form_validation->set_rules('username', 'Username', 'required|trim', [
-                    'required' => '{field} tidak boleh kosong!',
-                ]);
-                // password
-                $this->form_validation->set_rules('password', 'Password', 'required|trim', [
-                    'required' => '{field} tidak boleh kosong!',
-                ]);
-                
+				// username
+				$this->form_validation->set_rules('username', 'Username', 'required|trim', [
+					'required' => '{field} tidak boleh kosong!',
+				]);
+				// password
+				$this->form_validation->set_rules('password', 'Password', 'required|trim', [
+					'required' => '{field} tidak boleh kosong!',
+				]);
+
                 if($this->form_validation->run() == false)
                 {
                     $data = [
@@ -50,7 +50,7 @@
                             $this->session->set_userdata($data);
 
                             $this->session->set_flashdata(
-                                'message',
+                                'alert',
                                 '<div class="alert alert-success alert-dismissible d-flex align-items-center fade show alert-recipe" role="alert">
                                     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
                                     <div class="login-alert">
@@ -65,7 +65,7 @@
                         else
                         {
                             $this->session->set_flashdata(
-                                'message',
+                                'alert',
                                 '<div class="alert alert-danger alert-dismissible d-flex align-items-center fade show" role="alert">
                                     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
                                     <div class="login-alert">
@@ -80,7 +80,7 @@
                     else
                     {
                         $this->session->set_flashdata(
-                            'message',
+                            'alert',
                             '<div class="alert alert-danger alert-dismissible d-flex align-items-center fade show" role="alert">
                                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
                                 <div class="login-alert">
@@ -95,7 +95,7 @@
             }
             else
             {
-                redirect('error');
+                redirect();
             }
         }
 
@@ -103,27 +103,27 @@
         {
             if(!$this->session->username)
             {
-                // fullname
-                $this->form_validation->set_rules('fullname', 'Nama', 'required|trim', [
-                    'required' => '{field} tidak boleh kosong!'
-                ]);
-                // username
-                $this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[user.username]', [
-                    'required' => '{field} tidak boleh kosong!',
-                    'is_unique' => '{field} telah terdaftar!'
-                ]);
-                // password
-                $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]', [
-                    'required' => '{field} tidak boleh kosong!',
-                    'matches' => '{field} tidak cocok!',
-                    'min_length' => '{field} terlalu pendek!'
-                ]);
-                // confirm password
-                $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]', [
-                    'required' => 'Konfirmasi {field} tidak boleh kosong!',
-                    'matches' => '{field} tidak cocok!'
-                ]);
-    
+				// username
+				$this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[user.username]', [
+					'required' => '{field} tidak boleh kosong!',
+					'is_unique' => '{field} telah terdaftar!'
+				]);
+				// fullname
+				$this->form_validation->set_rules('fullname', 'Fullname', 'required|trim', [
+					'required' => '{field} tidak boleh kosong!'
+				]);
+				// password
+				$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]', [
+					'required' => '{field} tidak boleh kosong!',
+					'matches' => '{field} tidak cocok!',
+					'min_length' => '{field} terlalu pendek!'
+				]);
+				// confirm password
+				$this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]', [
+					'required' => 'Konfirmasi {field} tidak boleh kosong!',
+					'matches' => '{field} tidak cocok!'
+				]);
+
                 if($this->form_validation->run( ) == false)
                 {
                     $data = [
@@ -140,7 +140,7 @@
                     $data = [
                         'username' => htmlspecialchars($this->input->post('username', true)),
                         'fullname' => htmlspecialchars($this->input->post('fullname', true)),
-                        'image' => 'default_user.png',
+                        'image' => 'default_user.jpg',
                         'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                         'date_created' => time()
                     ];
@@ -148,7 +148,7 @@
                     $this->User->add_new_user($data);
     
                     $this->session->set_flashdata(
-                        'message',
+                        'alert',
                         '<div class="alert alert-success alert-dismissible d-flex align-items-center fade show" role="alert">
                             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
                             <div class="login-alert">
@@ -162,22 +162,19 @@
             }
             else
             {
-                redirect('error');
+                redirect();
             }
         }
 
         public function logout()
         {
-            if(!$this->session->username)
+            if($this->session->username)
             {
-                redirect('error');
+				$this->session->unset_userdata($this->session->username);
+				$this->session->sess_destroy();
             }
-            else
-            {
-                $this->session->unset_userdata($this->session->username);
-                $this->session->sess_destroy();
-                redirect();
-            }
+			
+			redirect();
         }
     }
 ?>
