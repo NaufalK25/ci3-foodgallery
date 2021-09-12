@@ -29,9 +29,9 @@
                 </p>
             </div>
         <?php else: ?>
-            <form action="" method="GET" class="d-flex justify-content-center mb-3">
-                <input class="form-control me-2 home-jumbotron-input" type="search" placeholder="Search" aria-label="Search" autofocus>
-                <button type="submit" class="btn btn-outline-success home-jumbotron-button"><i class="fas fa-search"></i> Search</button>
+            <form action="<?= base_url() ?>RecipeController/get_search_keyword" method="POST" class="d-flex justify-content-center mb-3">
+                <input class="form-control border-dark me-2 home-jumbotron-input" type="search" name="search-keyword" placeholder="Cari makanan disini..." aria-label="Search" autofocus>
+                <input type="submit" class="btn btn-outline-success home-jumbotron-button" name="submit" value="Cari">
             </form>
         <?php endif; ?>
         <?php if(!$this->session->username): ?>

@@ -70,41 +70,61 @@
     
                 $recipe_detail = $this->Api->get_recipe_detail($key);
     
-    
-                if(
-                    !$recipe_detail ||
-                    (
-                        empty($recipe_detail->needItem) && 
-                        empty($recipe_detail->ingredient) &&
-                        empty($recipe_detail->step) &&
-                        $recipe_detail->new_title == 0
-                    )
-                )
-                {
-                    redirect();
-                }
-                else
-                {
-                    $count_saved = $this->Recipe->count_rows('saved_recipe', $recipe_detail->title);
-                    $count_made = $this->Recipe->count_rows('made_recipe', $recipe_detail->title);
-                    $count_mastered = $this->Recipe->count_rows('mastered_recipe', $recipe_detail->title);
+                $count_saved = $this->Recipe->count_rows('saved_recipe', $recipe_detail->title);
+                $count_made = $this->Recipe->count_rows('made_recipe', $recipe_detail->title);
+                $count_mastered = $this->Recipe->count_rows('mastered_recipe', $recipe_detail->title);
+                $data = [
+                    'page_title' => $recipe_detail->title,
+                    'url' => '',
+                    'recipe_detail' => $recipe_detail,
+                    'count_saved' => $count_saved,
+                    'count_made' => $count_made,
+                    'count_mastered' => $count_mastered
+                ];
 
-                    $data = [
-                        'page_title' => $recipe_detail->title,
-                        'url' => '',
-                        'recipe_detail' => $recipe_detail,
-                        'count_saved' => $count_saved,
-                        'count_made' => $count_made,
-                        'count_mastered' => $count_mastered
-                    ];
-    
-                    $this->load->view('templates/header', $data);
-                    $this->load->view('recipe/detail');
-                    $this->load->view('templates/footer');
-                    $this->load->view('templates/script-footer');
-                }
+                $this->load->view('templates/header', $data);
+                $this->load->view('recipe/detail');
+                $this->load->view('templates/footer');
+                $this->load->view('templates/script-footer');
+			}
+		}
+
+		public function search_recipe()
+		{
+			if(!$this->session->username)
+            {
+                redirect();
             }
-        }
+            else
+			{
+				$keyword = $this->uri->segment(3);
+
+                $recipe_by_keyword = $this->Api->get_recipe_by_keyword($keyword);
+
+				$data = [
+					'page_title' => 'Search Recipe | FoodGallery',
+					'url' => base_url() . 'recipe/search',
+					'keyword' => $keyword,
+					'recipe_by_keyword' => $recipe_by_keyword
+				];
+
+				$this->load->view('templates/header', $data);
+				$this->load->view('recipe/search');
+				$this->load->view('templates/footer');
+				$this->load->view('templates/script-footer');
+			}
+		}
+
+
+		public function get_search_keyword()
+		{
+			if($this->input->post('submit'))
+			{
+				$keyword = $this->input->post('search-keyword');
+				redirect('recipe/search/' . $keyword);
+			}
+
+		}
 
         public function post_saved_recipe()
         {

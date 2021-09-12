@@ -100,5 +100,19 @@
 
             return $recipe_per_page;
         }
+
+		public function get_recipe_by_keyword($keyword)
+		{
+			$url = API_URL . '/api/search/?q=' . $keyword;
+
+			$recipe_by_keyword = $this->connect_api($url);
+
+			foreach($recipe_by_keyword as $recipe)
+            {
+                $recipe->new_title = $this->get_recipe_name($recipe->key);
+            }
+
+			return $recipe_by_keyword;
+		}
     }
 ?>

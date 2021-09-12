@@ -30,6 +30,9 @@
                         <a class="nav-link navbar-menu <?= $url == base_url() . 'recipe/page/1'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>recipe/page/1">Daftar Resep</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link navbar-menu <?= $url == base_url() . 'recipe/search'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>recipe/search">Cari Resep</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link navbar-menu <?= $url == base_url() . 'profile'? 'navbar-menu-aktif':'' ?>" href="<?= base_url(); ?>profile">Profil</a>
                     </li>
                     <li class="nav-item">

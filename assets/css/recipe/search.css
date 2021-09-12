@@ -1,0 +1,8 @@
+
+.search-input:focus, .search-button:focus {
+    box-shadow: none !important;
+}
+
+.search-button {
+	background-color: white;
+}

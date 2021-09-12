@@ -65,3 +65,5 @@ $route['profile'] = 'UserController';
 $route['(recipe/home|recipe|home)'] = 'RecipeController';
 $route['recipe/page/:num'] = 'RecipeController/get_recipe_list';
 $route['recipe/detail/:any'] = 'RecipeController/get_recipe_detail';
+$route['recipe/search'] = 'RecipeController/search_recipe';
+$route['recipe/search/:any'] = 'RecipeController/search_recipe';
