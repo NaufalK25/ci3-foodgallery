@@ -53,9 +53,7 @@
                                 'alert',
                                 '<div class="alert alert-success alert-dismissible d-flex align-items-center fade show alert-recipe" role="alert">
                                     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-                                    <div class="login-alert">
-                                        Selamat datang ' . $data['username'] . ', silakan mencari resep yang anda inginkan!
-                                    </div>
+                                    Selamat datang ' . $data['username'] . ', silakan mencari resep yang anda inginkan!
                                 <button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>'
                             );
@@ -115,16 +113,16 @@
 				// password
 				$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]', [
 					'required' => '{field} tidak boleh kosong!',
-					'matches' => '{field} tidak cocok!',
-					'min_length' => '{field} terlalu pendek!'
+					'min_length' => '{field} terlalu pendek!',
+					'matches' => '{field} tidak cocok!'
 				]);
 				// confirm password
-				$this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]', [
-					'required' => 'Konfirmasi {field} tidak boleh kosong!',
+				$this->form_validation->set_rules('password2', 'Confirm Password', 'required|trim|matches[password1]', [
+					'required' => '{field} tidak boleh kosong!',
 					'matches' => '{field} tidak cocok!'
 				]);
 
-                if($this->form_validation->run( ) == false)
+                if($this->form_validation->run() == false)
                 {
                     $data = [
                         'page_title' => 'Register | FoodGallery',

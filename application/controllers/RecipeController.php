@@ -118,12 +118,8 @@
 
 		public function get_search_keyword()
 		{
-			if($this->input->post('submit'))
-			{
-				$keyword = $this->input->post('search-keyword');
-				redirect('recipe/search/' . $keyword);
-			}
-
+			$keyword = $this->input->post('search-keyword');
+			redirect('recipe/search/' . $keyword);
 		}
 
         public function post_saved_recipe()
@@ -159,11 +155,8 @@
 
             $this->session->set_flashdata(
                 'alert',
-                '<div class="alert alert-' . $type . ' alert-dismissible d-flex align-items-center fade show text-start alert-recipe" role="alert">
-                    ' . $svg . '
-                    <div class="login-alert">
-                        ' . $message . '
-                    </div>
+                '<div class="alert alert-' . $type . ' alert-dismissible d-flex align-items-center fade show alert-recipe" role="alert">
+                    ' . $svg . $message . '
                 <button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>'
             );
@@ -204,11 +197,8 @@
 
             $this->session->set_flashdata(
                 'alert',
-                '<div class="alert alert-' . $type . ' alert-dismissible d-flex align-items-center fade show text-start alert-recipe" role="alert">
-                    ' . $svg . '
-                    <div class="login-alert">
-                        ' . $message . '
-                    </div>
+                '<div class="alert alert-' . $type . ' alert-dismissible d-flex align-items-center fade show alert-recipe" role="alert">
+					' . $svg . $message . '
                 <button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>'
             );
@@ -249,11 +239,8 @@
 
             $this->session->set_flashdata(
                 'alert',
-                '<div class="alert alert-' . $type . ' alert-dismissible d-flex align-items-center fade show text-start alert-recipe" role="alert">
-                    ' . $svg . '
-                    <div class="login-alert">
-                        ' . $message . '
-                    </div>
+                '<div class="alert alert-' . $type . ' alert-dismissible d-flex align-items-center fade show alert-recipe" role="alert">
+					' . $svg . $message . '
                 <button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>'
             );

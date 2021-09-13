@@ -23,5 +23,12 @@
 		{
 			$this->db->set('image', $profile_image);
 		}
+
+		public function change_user_password($username, $password)
+		{
+			$this->db->set('password', $password);
+			$this->db->where('username', $username);
+			$this->db->update('user');
+		}
     }
 ?>

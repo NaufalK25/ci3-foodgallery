@@ -14,7 +14,7 @@
 
 <form action="<?= base_url() ?>RecipeController/get_search_keyword" method="POST">
     <input class="form-control border-dark search-input" type="search" name="search-keyword" placeholder="Cari makanan disini..." aria-label="Search" autofocus>
-    <input type="submit" class="btn btn-outline-success search-button" name="submit" value="Cari">
+    <button type="submit" class="btn btn-outline-success search-button"><i class="fas fa-search"></i> Cari</button>
 </form>
 
 <?php if($keyword): ?>

@@ -37,15 +37,38 @@
                     </tr>
                 </tbody>
             </table>
-            <!-- Edit Profile Modal Button -->
+			<!-- Button Under User Info -->
             <button type="button" class="btn btn-outline-warning mb-2 me-2 profile-button" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profil</button>
-            <a href="#profile-simpan" class="btn btn-outline-primary mb-2 me-2 profile-button">Simpan</a>
-            <a href="#profile-buat" class="btn btn-outline-primary mb-2 me-2 profile-button">Pernah Dibuat</a>
-            <a href="#profile-kuasa" class="btn btn-outline-primary mb-2 me-2 profile-button">Telah Dikuasai</a>
+			<button type="button" class="btn btn-outline-warning mb-2 me-2 profile-button" data-bs-toggle="modal" data-bs-target="#changePasswordModal">Ubah Password</button>
             <a href="<?= base_url(); ?>logout" class="btn btn-outline-danger mb-2 profile-button">Keluar</a>
         </div>
     </div>
     <!-- End of Profile -->
+
+	<!-- Start of Profile Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light mt-5 sticky-top navbar-bg">
+  		<div class="container-fluid">
+			  <div class="mx-auto">
+				  <button class="navbar-toggler border-dark alert-button" type="button" data-bs-toggle="collapse" data-bs-target="#profilNav" aria-controls="profilNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+				  </button>
+			  </div>
+    		<div class="collapse navbar-collapse" id="profilNav">
+      			<ul class="navbar-nav mx-auto">
+        			<li class="nav-item mx-5 text-center">
+        				<a class="nav-link fs-5 navbar-menu" href="#profile-simpan">Simpan</a>
+        			</li>
+        			<li class="nav-item mx-5 text-center">
+        				<a class="nav-link fs-5 navbar-menu" href="#profile-buat">Pernah Dibuat</a>
+        			</li>
+        			<li class="nav-item mx-5 text-center">
+        				<a class="nav-link fs-5 navbar-menu" href="#profile-kuasa">Telah Dikuasai</a>
+        			</li>
+      			</ul>
+    		</div>
+  		</div>
+	</nav>
+	<!-- End of Profile Navbar -->
 
     <!-- Start of Saved Recipe -->
     <div class="row m-0">
@@ -253,4 +276,40 @@
             </div>
         </div>
     </div>
+</div>
+
+<!-- Change Password Modal -->
+<div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<p class="modal-title" id="changePasswordModalLabel">Ubah Password</p>
+        		<button type="button" class="btn-close alert-button" data-bs-dismiss="modal" aria-label="Close"></button>
+      		</div>
+      		<div class="modal-body">
+				<form action="UserController/change_password" method="POST">
+					<!-- Username -->
+					<div class="form-floating mb-3">
+                		<input type="password" class="form-control border-dark profile-input" id="current_password" name="current_password" placeholder="Current Username" autofocus>
+                		<label for="current_password"><i class="fas fa-key"></i> Current Password</label>
+                		<?= form_error('current_password', '<small class="profile-error">', '</small>') ?>
+            		</div>
+					<div class="form-floating mb-3">
+                		<input type="password" class="form-control border-dark profile-input" id="new_password" name="new_password" placeholder="New Username" autofocus>
+                		<label for="new_password"><i class="fas fa-key"></i> New Password</label>
+                		<?= form_error('new_password', '<small class="profile-error">', '</small>') ?>
+            		</div>
+					<div class="form-floating mb-3">
+                		<input type="password" class="form-control border-dark profile-input" id="repeat_new_password" name="repeat_new_password" placeholder="Repeat New Username" autofocus>
+                		<label for="repeat_new_password"><i class="fas fa-sync"></i> Repeat New Password</label>
+                		<?= form_error('repeat_new_password', '<small class="profile-error">', '</small>') ?>
+            		</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-outline-success profile-button">Simpan</button>
+				</form>
+        		<button type="button" class="btn btn-outline-danger profile-button" data-bs-dismiss="modal">Kembali</button>
+      		</div>
+    	</div>
+  	</div>
 </div>

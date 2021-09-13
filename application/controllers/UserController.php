@@ -72,60 +72,161 @@
 				'required' => '{field} tidak boleh kosong!'
 			]);
 
-			$username = $this->input->post('username');
-			$fullname = $this->input->post('fullname');
-
-			// if user also want to change profile image
-			$upload_image = $_FILES['edit-profile-image']['name'];
-
-			if($upload_image)
+			if($this->form_validation->run() == true)
 			{
-				$config['upload_path'] = './assets/img/profile/';
-				$config['allowed_types'] = 'gif|jpg|png';
-				$config['max_size']     = '2048';
+				$username = $this->input->post('username');
+				$fullname = $this->input->post('fullname');
 
-				$this->upload->initialize($config);
+				// if user also want to change profile image
+				$upload_image = $_FILES['edit-profile-image']['name'];
 
-				if($this->upload->do_upload('edit-profile-image'))
-                {
-					$old_profile_image = $user['image'];
+				if($upload_image)
+				{
+					$config['upload_path'] = './assets/img/profile/';
+					$config['allowed_types'] = 'gif|jpg|png';
+					$config['max_size']     = '2048';
 
-					if($old_profile_image != 'default_user.jpg')
-					{
-						unlink(FCPATH . 'assets/img/profile/' . $old_profile_image);
+					$this->upload->initialize($config);
+
+					if($this->upload->do_upload('edit-profile-image'))
+        		    {
+						$old_profile_image = $user['image'];
+
+						if($old_profile_image != 'default_user.jpg')
+						{
+							unlink(FCPATH . 'assets/img/profile/' . $old_profile_image);
+						}
+
+						$new_profile_image = $this->upload->data('file_name');
+						$this->User->update_profile_image($new_profile_image);
 					}
-
-					$new_profile_image = $this->upload->data('file_name');
-					$this->User->update_profile_image($new_profile_image);
 				}
-                else
-                {
+
+				$this->User->update_user_profile($username, $fullname);
+
+				$this->session->set_flashdata(
+					'alert',
+					'<div class="alert alert-success alert-dismissible d-flex align-items-center fade show alert-recipe" role="alert">
+						<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+						Profil anda berhasil diubah!
+					<button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>'
+				);
+
+				redirect('profile');
+			}
+			else
+			{
+				$this->session->set_flashdata(
+					'alert',
+					'<div class="alert alert-danger alert-dismissible d-flex align-items-center fade show alert-recipe" role="alert">
+							<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+							Profil anda gagal diubah!
+						<button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>'
+				);
+
+				redirect('profile');
+			}	
+		}
+
+		public function change_password()
+		{
+			$user = $this->User->get_username($this->session->username);
+
+			// current password
+			$this->form_validation->set_rules('current_password', 'Current Password', 'required|trim', [
+				'required' => '{field} tidak boleh kosong!'
+			]);
+			// new password
+			$this->form_validation->set_rules('new_password', 'New Password', 'required|trim|min_length[3]|matches[repeat_new_password]', [
+				'required' => '{field} tidak boleh kosong!',
+				'min_length' => '{field} terlalu pendek!',
+				'matches' => '{field} tidak cocok!'
+			]);
+			// repeat new password
+			$this->form_validation->set_rules('repeat_new_password', 'Repeat New Password', 'required|trim|matches[new_password]', [
+				'required' => '{field} tidak boleh kosong!',
+				'matches' => '{field} tidak cocok!'
+			]);
+
+			if($this->form_validation->run() == true)
+			{
+				$current_password = $this->input->post('current_password');
+				$new_password = $this->input->post('new_password');
+
+				if(!password_verify($current_password, $user['password']))
+				{
 					$this->session->set_flashdata(
 						'alert',
 						'<div class="alert alert-danger alert-dismissible d-flex align-items-center fade show alert-recipe" role="alert">
-                        	    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                        	    <div class="login-alert">
-                        	        Profil anda gagal diubah!
-                        	    </div>
-                        	<button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>'
+								<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+								Password yang anda inputkan salah!
+							<button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
+						</div>'
 					);
-                }
+
+					redirect('profile');
+				}
+				else
+				{
+					if($current_password == $new_password)
+					{
+						$this->session->set_flashdata(
+							'alert',
+							'<div class="alert alert-danger alert-dismissible d-flex align-items-center fade show alert-recipe" role="alert">
+									<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+									Password baru tidak boleh sama dengan password lama!
+								<button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
+							</div>'
+						);
+					
+						redirect('profile');
+					}
+					else
+					{
+						$hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+
+						$this->User->change_user_password($this->session->username, $hashed_password);
+
+						$this->session->set_flashdata(
+							'alert',
+							'<div class="alert alert-success alert-dismissible d-flex align-items-center fade show alert-recipe" role="alert">
+								<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+								Password anda berhasil diubah!
+							<button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
+							</div>'
+						);
+					
+						redirect('profile');
+					}
+				}
+
+				$this->session->set_flashdata(
+					'alert',
+					'<div class="alert alert-success alert-dismissible d-flex align-items-center fade show alert-recipe" role="alert">
+						<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+						Password anda berhasil diubah!
+					<button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>'
+				);
+	
+				redirect('profile');
+			}
+			else
+			{
+				$this->session->set_flashdata(
+					'alert',
+					'<div class="alert alert-danger alert-dismissible d-flex align-items-center fade show alert-recipe" role="alert">
+							<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+							Password anda gagal diubah!
+						<button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>'
+				);
+
+				redirect('profile');
 			}
 
-			$this->User->update_user_profile($username, $fullname);
-
-			$this->session->set_flashdata(
-				'alert',
-				'<div class="alert alert-success alert-dismissible d-flex align-items-center fade show alert-recipe" role="alert">
-					<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-					<div class="login-alert">
-						Profil anda berhasil diubah!
-					</div>
-				<button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>'
-			);
-			redirect('profile');
 		}
 
         public function post_remove_saved_recipe()
@@ -137,9 +238,7 @@
                 'alert',
                 '<div class="alert alert-success alert-dismissible d-flex align-items-center fade show text-start alert-recipe" role="alert">
                     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-                    <div class="login-alert">
-                        ' . $recipe_title . ' berhasil dihapus dari resep yang disimpan!
-                    </div>
+                    ' . $recipe_title . ' berhasil dihapus dari resep yang disimpan!
                 <button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>'
             );
@@ -156,9 +255,7 @@
                 'alert',
                 '<div class="alert alert-success alert-dismissible d-flex align-items-center fade show text-start alert-recipe" role="alert">
                     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-                    <div class="login-alert">
-                        ' . $recipe_title . ' berhasil dihapus dari resep yang pernah dibuat!
-                    </div>
+                    ' . $recipe_title . ' berhasil dihapus dari resep yang pernah dibuat!
                 <button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>'
             );
@@ -175,9 +272,7 @@
                 'alert',
                 '<div class="alert alert-success alert-dismissible d-flex align-items-center fade show text-start alert-recipe" role="alert">
                     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-                    <div class="login-alert">
-                        ' . $recipe_title . ' berhasil dihapus dari resep yang telah dikuasai!
-                    </div>
+                    ' . $recipe_title . ' berhasil dihapus dari resep yang telah dikuasai!
                 <button type="button" class="btn-close alert-button" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>'
             );
