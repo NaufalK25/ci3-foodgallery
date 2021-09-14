@@ -45,6 +45,11 @@
 
                 $recipe_per_page = $this->Api->get_recipe_per_page($page);
 
+				if(!$recipe_per_page)
+				{
+					redirect();
+				}
+
                 $data = [
                     'page_title' => 'Recipe List | FoodGallery',
                     'url' => base_url() . 'recipe/page/1',
@@ -69,6 +74,11 @@
                 $key = $this->uri->segment(3, 0);
     
                 $recipe_detail = $this->Api->get_recipe_detail($key);
+
+				if(!$recipe_detail)
+				{
+					redirect();
+				}
     
                 $count_saved = $this->Recipe->count_rows('saved_recipe', $recipe_detail->title);
                 $count_made = $this->Recipe->count_rows('made_recipe', $recipe_detail->title);

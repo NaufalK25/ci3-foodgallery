@@ -93,6 +93,12 @@
             
             $recipe_per_page = $this->connect_api($url);
 
+			// return false if $recipe_per_page is null
+            if(!$recipe_per_page)
+            {
+                return false;
+            }
+
             foreach($recipe_per_page as $recipe)
             {
                 $recipe->new_title = $this->get_recipe_name($recipe->key);
@@ -106,6 +112,12 @@
 			$url = API_URL . '/api/search/?q=' . $keyword;
 
 			$recipe_by_keyword = $this->connect_api($url);
+
+			// return false if $recipe_by_keyword is null
+            if(!$recipe_by_keyword)
+            {
+                return false;
+            }
 
 			foreach($recipe_by_keyword as $recipe)
             {
