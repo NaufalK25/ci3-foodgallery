@@ -18,7 +18,7 @@
 <div class="home-jumbotron">
     <div class="home-jumbotron-isi">
         <div class="home-jumbotron-tulisan">
-            <p>Masak Apa Hari Ini?</p>
+            <p>Mau Masak Apa?</p>
         </div>
         <?php if(!$this->session->username): ?>
             <div class="home-jumbotron-alert mb-3">

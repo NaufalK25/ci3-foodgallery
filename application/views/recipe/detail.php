@@ -84,12 +84,12 @@
 
     <div class="row m-0 my-5 justify-content-center">
         <div class="col">
-            <p class="text-center fs-5 border-end border-dark">
+            <p class="text-center fs-5">
                 <i class="fas fa-arrow-up"></i> <?= $recipe_detail->dificulty; ?>
             </p>
         </div>
         <div class="col">
-            <p class="text-center fs-5 border-end border-dark">
+            <p class="text-center fs-5">
                 <i class="fas fa-clock"></i> <?= $recipe_detail->times; ?>      
             </p>
         </div>

@@ -1,0 +1,16 @@
+.page-card {
+    width: 20rem;
+	background-color: #f6f6f7;
+}
+
+.page-button {
+	background-color: white;
+}
+
+.page-button:focus {
+    box-shadow: none !important;
+}
+
+.page-pagination {
+	margin-bottom: 70px;
+}
