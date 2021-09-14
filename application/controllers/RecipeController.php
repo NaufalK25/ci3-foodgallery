@@ -45,11 +45,6 @@
 
                 $recipe_per_page = $this->Api->get_recipe_per_page($page);
 
-				if(!$recipe_per_page)
-				{
-					redirect();
-				}
-
                 $data = [
                     'page_title' => 'Recipe List | FoodGallery',
                     'url' => base_url() . 'recipe/page/1',
