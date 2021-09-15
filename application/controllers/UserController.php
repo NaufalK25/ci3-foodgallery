@@ -141,7 +141,7 @@
 			// new password
 			$this->form_validation->set_rules('new_password', 'New Password', 'required|trim|min_length[3]|matches[repeat_new_password]', [
 				'required' => '{field} tidak boleh kosong!',
-				'min_length' => '{field} terlalu pendek!',
+				'min_length' => 'Panjang {field} minimal {param}!',
 				'matches' => '{field} tidak cocok!'
 			]);
 			// repeat new password

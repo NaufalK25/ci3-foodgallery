@@ -111,9 +111,9 @@
 					'required' => '{field} tidak boleh kosong!'
 				]);
 				// password
-				$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]', [
+				$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]', [
 					'required' => '{field} tidak boleh kosong!',
-					'min_length' => '{field} terlalu pendek!',
+					'min_length' => 'Panjang {field} minimal {param}!',
 					'matches' => '{field} tidak cocok!'
 				]);
 				// confirm password
