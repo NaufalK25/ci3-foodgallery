@@ -13,6 +13,7 @@
 ?>
 
 <?= $this->session->flashdata('alert'); ?>
+<?php $this->session->set_flashdata('alert', null); ?>
 
 <div class="profile-kotak">
     <!-- Srart of Profile -->

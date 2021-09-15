@@ -13,6 +13,7 @@
 ?>
 
 <?= $this->session->flashdata('alert'); ?>
+<?php $this->session->set_flashdata('alert', null); ?>
 
 <!-- Start of Jumbotron -->
 <div class="home-jumbotron">
