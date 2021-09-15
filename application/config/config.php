@@ -23,8 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost:8080/foodgallery/';
+// $config['base_url'] = 'http://localhost:8080/foodgallery/';
 // $config['base_url'] = 'http://foodgallery.rf.gd';
+$config['base_url'] = 'https://ci3-foodgallery.herokuapp.com/';
 
 /*
 |--------------------------------------------------------------------------

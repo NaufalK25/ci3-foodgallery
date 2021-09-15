@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'ci3_foodgallery',
-	'dbdriver' => 'mysqli',
+	'hostname' => 'ec2-44-198-223-154.compute-1.amazonaws.com',
+	'username' => 'tgpvuzzzaujcze',
+	'password' => '7e0db2001602c2fd881ba52f6285f4b93336e0f66fc40f6e4c483129bb59a125',
+	'database' => 'dfcumuspe2mv79',
+	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
