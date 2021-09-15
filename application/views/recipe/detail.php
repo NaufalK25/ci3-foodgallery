@@ -13,6 +13,7 @@
 ?>
 
 <?= $this->session->flashdata('alert'); ?>
+<?php $this->session->set_flashdata('alert', null); ?>
              
 <div class="detail-kotak">
     <p class="detail-judul"><?= $recipe_detail->title; ?></p>
