@@ -89,7 +89,7 @@
 					$this->upload->initialize($config);
 
 					if($this->upload->do_upload('edit-profile-image'))
-        		    {
+					{
 						$old_profile_image = $user['image'];
 
 						if($old_profile_image != 'default_user.jpg')
