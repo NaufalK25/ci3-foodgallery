@@ -78,6 +78,7 @@
                 $count_saved = $this->Recipe->count_rows('saved_recipe', $recipe_detail->title);
                 $count_made = $this->Recipe->count_rows('made_recipe', $recipe_detail->title);
                 $count_mastered = $this->Recipe->count_rows('mastered_recipe', $recipe_detail->title);
+				
                 $data = [
                     'page_title' => $recipe_detail->title,
                     'url' => '',

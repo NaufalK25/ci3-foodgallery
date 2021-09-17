@@ -28,11 +28,6 @@
             return $this->db->select()->get_where($table, ['username' => $username])->result_array();
         }
 
-        public function count_recipe_by_user($table, $username)
-        {
-            return $this->db->select()->get_where($table, ['username' => $username])->num_rows();
-        }
-
         public function remove_recipe($table, $username, $recipe_title)
         {
             return $this->db->delete($table, ['username' => $username, 'recipe_title' => $recipe_title]);
