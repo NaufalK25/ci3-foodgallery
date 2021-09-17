@@ -2,9 +2,9 @@
     defined('BASEPATH') OR exit('No direct script access allowed');
     
     class Recipe extends CI_Model {
-        public function add_new_recipe($table, $saved_recipe)
+        public function add_new_recipe($table, $recipe)
         {
-            return $this->db->insert($table, $saved_recipe);
+            return $this->db->insert($table, $recipe);
         }
 
         public function is_recipe_exists($table, $username, $recipe_title)
