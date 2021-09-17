@@ -1,5 +1,7 @@
 # foodgallery
 
+![Visitor Badge](https://visitor-badges.glitch.me?username=NaufalK25&repo=ci3-foodgallery&label=VISITOR&style=flat-square&color=%23FFFFFF&token=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&contentType=svg)
+
 Indonesian Food Recipe List built with Bootstrap 5 and CodeIgniter 3.
 
 API - <a href="https://github.com/tomorisakura/unofficial-masakapahariini-api">masakapahariini</a>
