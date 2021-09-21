@@ -37,7 +37,8 @@
 }
 
 .home-jumbotron-input:focus {
-    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
 }
 
 .home-jumbotron-button, .home-today-button {
@@ -45,7 +46,8 @@
 }
 
 .home-jumbotron-button:focus, .home-today-button:focus {
-    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
 }
 
 .home-today {

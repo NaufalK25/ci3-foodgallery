@@ -19,7 +19,8 @@
 }
 
 .detail-table-button:focus {
-    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
 }
 
 .detail-bawah-table > p{
@@ -41,5 +42,6 @@
 }
 
 .detail-checkbox:focus {
-    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
 }

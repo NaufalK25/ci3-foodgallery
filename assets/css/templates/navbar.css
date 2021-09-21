@@ -25,7 +25,8 @@ body {
 }
 
 .alert-button:focus {
-    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
 }
 
 .alert-recipe {

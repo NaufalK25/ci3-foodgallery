@@ -13,7 +13,8 @@
 }
 
 .profile-button:focus, .profile-input:focus {
-    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
 }
 
 .profile-card {

@@ -1,5 +1,6 @@
 .search-input:focus, .search-button:focus {
-    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
 }
 
 .search-button {
@@ -9,9 +10,4 @@
 .search-no-content {
 	margin-top: 120px;
 	margin-bottom: 232.5px;
-}
-
-.search-card {
-    width: 20rem;
-	background-color: #f6f6f7;
 }
