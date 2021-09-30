@@ -1,6 +1,6 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
-    
+
     class AuthController extends CI_Controller {
         public function __construct()
         {
@@ -9,7 +9,7 @@
         }
 
         public function index()
-        {   
+        {
             if(!$this->session->username)
             {
 				// username
@@ -27,7 +27,7 @@
                         'page_title' => 'Login | FoodGallery',
                         'url' => base_url() . 'login'
                     ];
-        
+
                     $this->load->view('templates/header', $data);
                     $this->load->view('auth/login');
                     $this->load->view('templates/script-footer');
@@ -36,9 +36,9 @@
                 {
                     $username = $this->input->post('username');
                     $password = $this->input->post('password');
-    
+
                     $user = $this->User->get_username($username);
-    
+
                     if($user)
                     {
                         if(password_verify($password, $user['password']))
@@ -46,7 +46,7 @@
                             $data = [
                                 'username' => $user['username']
                             ];
-    
+
                             $this->session->set_userdata($data);
 
                             $this->session->set_flashdata(
@@ -128,7 +128,7 @@
                         'page_title' => 'Register | FoodGallery',
                         'url' => base_url() . 'register'
                     ];
-        
+					
                     $this->load->view('templates/header', $data);
                     $this->load->view('auth/register');
                     $this->load->view('templates/script-footer');
@@ -142,9 +142,9 @@
                         'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                         'date_created' => time()
                     ];
-    
+
                     $this->User->add_new_user($data);
-    
+
                     $this->session->set_flashdata(
                         'alert',
                         '<div class="alert alert-success alert-dismissible d-flex align-items-center fade show" role="alert">
@@ -171,7 +171,7 @@
 				$this->session->unset_userdata($this->session->username);
 				$this->session->sess_destroy();
             }
-			
+
 			redirect();
         }
     }
